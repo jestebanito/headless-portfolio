@@ -61,8 +61,16 @@ const Post = ( {restBase, featuredImage} ) => {
                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}></div>
                 <div className="single-button-container">
-                    <div className="live-site" dangerouslySetInnerHTML={{__html:restData.acf.live_site_button}}></div>
-                    <div className="github-repo" dangerouslySetInnerHTML={{__html:restData.acf.github_repo_button}}></div>
+                    <button className="live-site">
+                        <a href={restData.acf.live_site_button.url} target="_blank" rel="noopener noreferrer">
+                            {restData.acf.live_site_button.title}
+                        </a>
+                    </button>
+                    <button className="github-repo">
+                        <a href={restData.acf.github_repo_button.url} target="_blank" rel="noopener noreferrer">
+                            {restData.acf.github_repo_button.title}
+                        </a>
+                    </button>
                 </div>
                 <h3>More Projects</h3>
                 <nav className="posts-navigation">
@@ -78,7 +86,7 @@ const Post = ( {restBase, featuredImage} ) => {
             {connectData && (
                 <section id='connect-post'>
                     <h2>Like what you see?</h2>
-                    <div className="entry-content" data-aos="fade-left">
+                    <div className="entry-content">
                         <article>
                             <p>{connectData.acf.connect_short_text}</p>
                             <h3>{connectData.acf.get_in_touch}</h3>
@@ -92,8 +100,8 @@ const Post = ( {restBase, featuredImage} ) => {
                                 {/* {isCopied && <span>Copied!</span>} */}
                             </div>
                             <div className="social-container">
-                                <div dangerouslySetInnerHTML={{ __html:connectData.acf.linkedin_icon}}></div>
-                                <div dangerouslySetInnerHTML={{ __html:connectData.acf.github_icon}}></div>
+                                <div className="linked-in" dangerouslySetInnerHTML={{ __html:connectData.acf.linkedin_icon}}></div>
+                                <div className="git-hub" dangerouslySetInnerHTML={{ __html:connectData.acf.github_icon}}></div>
                             </div>
                         </article>
                     </div>

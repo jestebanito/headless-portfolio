@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Loading from './Loading';
 import Drumkit from './Drumkit';
 import copyIcon from '../assets/copy.svg';
+import downIcon from '../assets/down.svg';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -44,14 +45,18 @@ const Home = ({ restBase, featuredImage }) => {
             }
         };
         fetchData();
-        // Set the loading status to true after all data is fetched
+        // Sets loading status to true after all data is fetched
     }, [homePath, worksPath, postsPath, aboutPath, connectPath]);
 
+    // Initializes aos dependency 
+    useEffect(() => {
+        aos.init();
+    }, []);
+      
+    // Function to copy email  
     const [isCopied, setIsCopied] = useState(false);
-
     const handleCopyClick = async () => {
     const emailText = connectData.acf.connect_email;
-
     try {
         await navigator.clipboard.writeText(emailText);
         setIsCopied(true);
@@ -65,9 +70,12 @@ const Home = ({ restBase, featuredImage }) => {
       }
     };
 
-    useEffect(() => {
-        aos.init();
-    }, []);
+    const handleScroll = (sectionId) => {
+        const section = document.getElementById(sectionId);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          } 
+    };
 
     return (
         <>
@@ -76,22 +84,30 @@ const Home = ({ restBase, featuredImage }) => {
                 {homeData && (
                 <section id='home'>
                     <h1>Josh Esteban</h1>          
-                        <article>
-                            <h3>{homeData.acf.intro}</h3>
+                        <article className="intro-container">
+                            <h3 className="typewriter">{homeData.acf.developer}</h3>
+                            <h3 className="designer">{homeData.acf.designer}</h3>
                         </article>
+                        <button className="down-arrow">
+                        <img 
+                            src={downIcon} 
+                            alt="Skip to content"
+                            onClick={() => handleScroll('work')} 
+                        />
+                        </button>
                 </section>
                 )}
     
                 {worksData && (
                 <section id='work'>
-                    <h2 data-aos="fade-up">My Work</h2>
+                    <h2 data-aos="fade-up" data-aos-duration="1000">My Work</h2>
                     <div className="entry-content">
                         {postsData.map(post => 
-                        <article key={post.id} id={`post-${post.id}`} data-aos="fade-up">
+                        <article key={post.id} id={`post-${post.id}`} data-aos="fade-up" data-aos-duration="1000">
+                            <h3>{post.title.rendered}</h3>
                             {post.featured_media !== 0 && post._embedded &&
                                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                             }
-                            <h3>{post.title.rendered}</h3>
                             <div dangerouslySetInnerHTML={{__html:post.acf.react_drum_kit_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.fitness_website_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.javascript_game_overview}}></div>
@@ -105,12 +121,12 @@ const Home = ({ restBase, featuredImage }) => {
 
                 {aboutData && (
                 <section id='about'>
-                    <h2>About Me</h2>
-                    <div className="entry-content" data-aos="fade-left">
+                    <h2 data-aos="fade-up" data-aos-duration="1000">About Me</h2>
+                    <div className="entry-content" data-aos="fade-up" data-aos-duration="1000">
                         <article className="about-article">
                             <div className='about-intro' dangerouslySetInnerHTML={{ __html:aboutData.acf.about_me_intro}}></div>
                         </article>
-                        <div data-aos="fade-up">
+                        <div data-aos="fade-up" data-aos-duration="1000">
                             <Drumkit />
                         </div>
                     </div>
@@ -119,8 +135,8 @@ const Home = ({ restBase, featuredImage }) => {
 
                 {connectData && (
                 <section id='connect'>
-                    <h2>Like what you see?</h2>
-                    <div className="entry-content" data-aos="fade-left">
+                    <h2 data-aos="fade-up" data-aos-duration="1000">Like what you see?</h2>
+                    <div className="entry-content" data-aos="fade-up" data-aos-duration="1000">
                         <article>
                             <p>{connectData.acf.connect_short_text}</p>
                             <h3>{connectData.acf.get_in_touch}</h3>
@@ -134,8 +150,8 @@ const Home = ({ restBase, featuredImage }) => {
                                 {/* {isCopied && <span>Copied!</span>} */}
                             </div>
                             <div className="social-container">
-                                <div dangerouslySetInnerHTML={{ __html:connectData.acf.linkedin_icon}}></div>
-                                <div dangerouslySetInnerHTML={{ __html:connectData.acf.github_icon}}></div>
+                                <div className="linked-in" dangerouslySetInnerHTML={{ __html:connectData.acf.linkedin_icon}}></div>
+                                <div className="git-hub" dangerouslySetInnerHTML={{ __html:connectData.acf.github_icon}}></div>
                             </div>
                         </article>
                     </div>

@@ -9,6 +9,7 @@ html {
 
 body {
 	margin: 0;
+	background-color: #454545;
 }
 
 header {
@@ -82,10 +83,6 @@ mark {
 	color: #000;
 }
 
-/* small {
-	font-size: 80%;
-} */
-
 sub,
 sup {
 	font-size: 75%;
@@ -106,9 +103,9 @@ img {
 	border: 0;
 }
 
-svg:not(:root) {
+/* svg:not(:root) {
 	overflow: hidden;
-}
+} */
 
 hr {
 	box-sizing: content-box;
@@ -213,34 +210,28 @@ th {
 # Typography
 --------------------------------------------------------------*/
 body,
-button,
 input,
 select,
 textarea {
-	color: #303030;
+	color: #DFDFDF;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
-}
-
-@font-face {
-    font-family: 'Ford Antenna';
-    src: url('./assets/fonts/FordAntenna-Medium.ttf');
-    font-weight: medium;
-    font-style: normal;
-    font-display: swap;
+	font-weight: 500;
 }
 
 button {
+	font-family: 'Albert Sans', sans-serif;
+	font-weight: 700;
 	overflow: visible;
 	padding-block: 1px;
     padding-inline: 10px;
     border-width: 3px;
-    border-color: buttonborder;
+    border-color: #ffffff;
     border-image: initial;
 	font-size: 1.1rem;
 	margin: 0 auto;
-	background-color: #182F80;
+	background-color: #303030;
 	border-radius: 0.5rem;
 	color: #ffffff
 }
@@ -256,7 +247,8 @@ h6 {
 
 .site-header {
 	text-align: center;
-	box-shadow: 0px 0px 20px -12px;
+	box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
+	background-color: #303030;
 }
 
 p.site-title {
@@ -410,8 +402,15 @@ table {
 
 .single-post .single-button-container {
 	display: flex;
-	justify-content: center;
-	gap: 4rem;
+	gap: 30px;
+	width: 18rem;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.single-post .single-button-container a {
+	color: #ffffff;
+	text-decoration: none;
 }
 
 .single-post .entry-content {
@@ -424,20 +423,29 @@ table {
 	font-size: 1.2rem;
 	padding: 0 9.5%;
 	font-weight: 600;
+	color: #dfdfdf
+}
+
+.single-post .posts-navigation .next-post:hover, .prev-post:hover {
+	transform: scale(1.1);
+	color: #ffffff
+}
+
+.single-post h2 {
+	font-family: 'Albert Sans', sans-serif;
+	font-size: 2.2rem;
+	font-weight: 500;
+	color: #ffffff;
+	padding-top: 4.5rem;
+	text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
 }
 
 .single-post h3 {
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 600;
-	color: #303030;
-}
-
-.single-post h2 {
-	font-family: 'Albert Sans', sans-serif;
-	font-size: 2.4rem;
-	font-weight: 800;
-	color: #182F80;
-	padding-top: 4.5rem;
+	text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
+	color: #ffffff;
+	margin-top: 6rem;
 }
 
 .posts-navigation {
@@ -449,7 +457,7 @@ table {
 # Links
 --------------------------------------------------------------*/
 a {
-	color: #182F80;
+	color: #dfdfdf;
 }
 
 a:hover,
@@ -570,10 +578,10 @@ a:active {
 
 #main section h2 {
 	font-family: 'Albert Sans', sans-serif;
-	/* font-family: 'Ford Antenna', sans-serif; */
-	font-size: 2.4rem;
-	font-weight: 800;
-	color: #182F80;
+	font-size: 2.2rem;
+	font-weight: 500;
+	text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
+	color: #eeeeee;
 	text-align: center;
 	padding-top: 7.5rem;
 	margin-bottom: 2rem;
@@ -596,8 +604,6 @@ a:active {
 	width: 12.5rem;
 	height: 1px;
 	margin: 0 auto;
-	/* Removes the gray line*/
-	/* background-color: transparent; */
 }
 
 #main .featured-works {
@@ -622,39 +628,144 @@ a:active {
 }
 
 #main #home {
-	padding: 12.8rem 0 5.8rem;
+	padding: 11.5rem 0 0;
+	height: 80vh;
 }
 
 #main #home h1 {
-	font-family: 'Squada One', sans-serif;
-	letter-spacing: 0.1rem;
-	font-size: 4rem;
-	font-weight: 800;
-	color: #182F80;
+	font-family: 'Blinker', sans-serif;
+	font-size: 3.5rem;
+	font-weight: 400;
+	color: #eeeeee;
 	margin-bottom: 0;
 	text-align: center;
 	line-height: 1;
+	text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
+}
+
+#main #home article {
+	max-width: 15rem;
+}
+
+#main article p {
+	margin-top: 0.8rem;
+}
+
+#home .down-arrow {
+	position: absolute;
+	width: 40px;
+	bottom: 70px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	animation: down 1.5s infinite;
+	padding: 0;
+    border-width: 0;
+	max-width: 50px;
+	background-color: transparent;
+	border-radius: 0;
+	z-index: 10;
+}
+
+@keyframes down {
+	from {
+		transform: translateY(-15px);
+		opacity: 0;
+	}
+    to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+#home .intro-container {
+	display: flex;
+}
+
+#home .intro-container h3 {
+	margin: 0.4rem auto 0;
+  	flex: 0 0 auto;
+	width: 50%;
+	color: #eeeeee;
+}
+
+.typewriter {
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	border-right: .15rem solid #eeeeee; /* The typewriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	animation: 
+	typing 2.2s steps(40, end),
+	blink-caret 1.2s step-end infinite;
+	text-align: left;
+	animation-delay: 1s;
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
+
+/* The typing effect */
+@keyframes typing {
+	from { width: 0; opacity: 0;}
+	to { width: 50%; opacity: 1;}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: #eeeeee; }
+}
+
+
+.designer {
+	animation: moving 2s;
+	transform: translateY(0px);
+	animation-delay: 3.4s;
+	opacity: 0;
+	animation-fill-mode: forwards;
+	padding-right: 0.5rem;
+}
+
+@keyframes moving {
+	from {
+		transform: translateY(10px);
+	}
+    to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+#main #home h1 {
+	opacity: 0;
+	animation: fadeInAnimation 2s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
 }
 
 article h3 {
 	font-family: 'Albert Sans', sans-serif;
 	font-size: 1.5rem;
-	font-weight: 800;
-	color: #182F80;
+	font-weight: 500;
+	color: #DFDFDF;
+	line-height: 1.8rem;
 }
 
-#home h3 {
-	margin-top: 0;
-}
 
 #work article {
 	margin: 0 auto 6rem;
 }
 
 #work article h3 {
-	margin: 0.8rem 0 0.5rem;
+	margin: 0.8rem 0;
 	font-size: 1.5rem;
-	color: #303030;
+	color: #DFDFDF;
 }
 
 #work article p {
@@ -665,11 +776,16 @@ article h3 {
 	text-decoration: none;
 }
 
+#about article {
+	max-width: 35rem;
+}
+
 #about .about-intro {
 	text-align: left;
 }
 
 #about .try-me {
+	color: #ffffff;
 	text-align: center;
 	font-weight: 600;
 }
@@ -678,16 +794,14 @@ article h3 {
 	margin-bottom: 2rem;
 }
 
-#connect article h3 {
+#connect article h3, #connect-post article h3 {
+	text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
+	color: #ffffff;
 	font-size: 1.65rem;
 }
 
 #connect-post article {
 	margin-bottom: 2rem;
-}
-
-#connect-post article h3 {
-	font-size: 1.65rem;
 }
 
 .links-container {
@@ -697,7 +811,7 @@ article h3 {
 	padding: 0.8rem 1.25rem 0.4rem;
 	max-width: 75rem;
 	margin: 0 auto;
-	background-color: #182F80
+	background-color: #303030;
 }
 
 .links-container ul {
@@ -713,7 +827,7 @@ article h3 {
 	flex-direction: column;
 	text-decoration: none;
 	font-family: 'Albert Sans', sans-serif;
-	font-weight: 700;
+	font-weight: 500;
 	font-size: 0.8rem;
 	color: #ffffff;
 }
@@ -728,7 +842,7 @@ article h3 {
 	box-shadow: 0px 0px 20px -15px;
 	padding-bottom: 5px;
 	margin-top: -1px;
-	background-color: #FFFFFF;
+	background-color: #303030;
 }
 
 .logo-container a img{
@@ -743,6 +857,7 @@ article h3 {
 }
 
 .email-container p {
+	color: #eeeeee;
 	margin: 0.5rem 0.5rem 0.5rem 1rem;
 	font-weight: 600;
 }
@@ -754,11 +869,11 @@ article h3 {
 }
 
 .email-container img:hover {
-	background-color: #F3F3F3;
+	background-color: #707070;
 }
 
 .email-container img:active {
-	background-color: #DCDCDC;
+	background-color: #606060;
 }
 
 .social-container {
@@ -766,20 +881,27 @@ article h3 {
 	gap: 1.5rem;
 }
 
-.social-container img {
-	width: 40px;
-	margin-bottom: -6.5px;
+.social-container .linked-in path:hover,
+.social-container .linked-in rect:hover + path {
+    fill: #0076B2;
+}
+
+.social-container .git-hub path:hover,
+.social-container .git-hub rect:hover + path {
+	fill: #171515;
 }
 
 footer {
-display: none;
+	display: none;
 }
 
 .featured-image img {
 	display: block;
 	border-radius: 0.8rem;
+	/* border: solid 0.2rem #f3f3f3; */
 	width: 100%;
 	margin: 0 auto;
+	box-shadow: 4px 6px 8px rgba(0,0,0,0.5);
 }
 
 .drums {
@@ -788,9 +910,12 @@ display: none;
 	width: 100%;
 	max-width: 19.4rem;
 	margin: 0 auto;
+	background-color: #606060;
 	background: url('./assets/drumicons/hardwood-floor.jpg') center/cover no-repeat;
-	outline: solid 0.3rem #182F80;
+	outline: solid 0.3rem #202020;
 	border-radius: 1rem;
+	box-shadow: 5px 15px 10px rgba(0,0,0,0.6);
+	
 }
 
 .drums img {
@@ -885,8 +1010,7 @@ img.ride {
 		width: 100%;
 		max-width: 26.9rem;
 		margin: 0 auto;
-		background-color: #606060;
-		outline: solid 0.5rem #182F80;
+		outline: solid 0.5rem #202020;
 		border-radius: 1rem;
 	}
 }
@@ -905,7 +1029,7 @@ img.ride {
 	}
 
 	#main section h2 {
-		font-size: 2.8rem;
+		font-size: 2.6rem;
 		padding-top: 9rem;
 	}
 
@@ -930,8 +1054,8 @@ img.ride {
 
 	.links-container {
 		position: static;
-		padding: 0.5em 1.25rem;
-		background-color: #FFFFFF;
+		padding: 0.5em 1.25rem 0;
+		background-color: #303030;
 	}
 	
 	.links-container ul {
@@ -939,17 +1063,22 @@ img.ride {
 		flex-wrap: wrap;
 		justify-content: flex-end;
 		margin: 0;
-		gap: 1rem;
+		gap: 1.2rem;
 	}
 	
 	.links-container a {
-		color:#182F80;
+		color:#FFFFFF;
 		font-size: 1.5rem;
 		font-weight: 800;
 	}
 
 	.links-container a img{
 		display: none;
+	}
+
+	.links-container a:hover {
+		text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
+		transform: scale(1.08);
 	}
 
 	.links-container .home-a {
@@ -967,17 +1096,22 @@ img.ride {
 		margin: 0;
 	}
 	
-	.logo-container a img{
-		margin: -10px 0 -16px;
+	.logo-container a img {
+		margin: -10px 0 -20px;
+		border-radius: 50%;
+	}
+
+	.logo-container a img:hover {
+		box-shadow: 3px 5px 6px rgba(0,0,0,0.6);
+		transform: scale(1.05);
 	}
 	
 	.site-navigation a {
 		display: block;
-		padding: 1.5rem 1rem;
+		padding: 1.5rem 0.8rem;
 		text-decoration: none;
 		font-family: 'Albert Sans', sans-serif;
-		/* font-family: 'Ford Antenna', sans-serif; */
-		font-weight: 800;
+		font-weight: 500;
 	}
 
 	#main article {
@@ -991,8 +1125,8 @@ img.ride {
 	footer {
 		display: block;
 		bottom: 0;
-		padding: 2rem 1.25rem;
-		background-color: #182F80;
+		padding: 1.5rem;
+		background-color: #303030;
 		width: 100%
 	}
 	
@@ -1012,8 +1146,7 @@ img.ride {
 		width: 100%;
 		max-width: 33.8rem;
 		margin: 0 auto;
-		background-color: #606060;
-		outline: solid 0.6rem #182F80;
+		outline: solid 0.6rem #202020;
 		border-radius: 1rem;
 	}
 
@@ -1163,11 +1296,15 @@ img.ride {
 	}
 
 	#main #home h1 {
-		font-size: 6rem;
+		font-size: 6.5rem;
 	}
 
 	#main #home h3 {
 		font-size: 1.8rem;
+	}
+
+	#main #home article {
+		max-width: 18rem;
 	}
 
 	.drums {
@@ -1176,8 +1313,7 @@ img.ride {
 		width: 100%;
 		max-width: 45rem;
 		margin: 0 auto;
-		background-color: #606060;
-		outline: solid 0.8rem #182F80;
+		outline: solid 0.8rem #202020;
 		border-radius: 1rem;
 	}
 
@@ -1187,7 +1323,7 @@ img.ride {
 		right: 1rem;
 		font-size: 1.2rem;
 		margin: 0 auto;
-		background-color: #182F80;
+		background-color: #303030;
 		border-radius: 0.5rem;
 		color: #ffffff
 	}
@@ -1207,8 +1343,7 @@ img.ride {
 		width: 100%;
 		max-width: 60rem;
 		margin: 0 auto;
-		background-color: #606060;
-		outline: solid 1rem #182F80;
+		outline: solid 1rem #202020;
 		border-radius: 1rem;
 	}
 }
