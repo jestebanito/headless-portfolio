@@ -74,8 +74,8 @@ const Post = ( {restBase, featuredImage} ) => {
                 </div>
                 <h2 className="tool-stack-title">Tools Used</h2>
                     <div className="tool-stack">
-                        {restData.acf.tools.map(tool =>
-                        <div key={tool.id}>
+                        {restData.acf.tools.map((tool, index) =>
+                        <div key={index}>
                             <img src={tool.tool_icons.url}></img>
                             <p>{tool.tool_title}</p>
                         </div>

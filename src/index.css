@@ -103,10 +103,6 @@ img {
 	border: 0;
 }
 
-/* svg:not(:root) {
-	overflow: hidden;
-} */
-
 hr {
 	box-sizing: content-box;
 	height: 0;
@@ -400,25 +396,21 @@ table {
 	width: 100%;
 }
 
+/*--------------------------------------------------------------
+# Single Work Page
+--------------------------------------------------------------*/
+
 .single-post {
 	max-width: 45rem;
 }
 
-.single-post .single-button-container {
-	display: flex;
-	gap: 30px;
-	width: 18rem;
-	margin: 0 auto;
-	padding: 0;
-}
-
-.single-post .single-button-container a {
-	color: #ffffff;
-	text-decoration: none;
-}
-
 .single-post .entry-content {
 	margin: 1rem 0 0;
+}
+
+.single-post .posts-navigation {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 .single-post .posts-navigation .next-post, .prev-post {
@@ -429,6 +421,7 @@ table {
 	font-weight: 600;
 	color: #dfdfdf
 }
+
 
 .single-post .posts-navigation .next-post:hover, .prev-post:hover {
 	transform: scale(1.1);
@@ -456,10 +449,19 @@ table {
  text-align: left;
 }
 
-.posts-navigation {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+.single-post .single-button-container {
+	display: flex;
+	gap: 30px;
+	width: 18rem;
+	margin: 0 auto;
+	padding: 0;
 }
+
+.single-post .single-button-container a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
 
 /*--------------------------------------------------------------
 # Links
@@ -731,7 +733,7 @@ a:active {
 	padding-top: 3rem;
 }
 
-.typewriter {
+#home .typewriter {
 	overflow: hidden; /* Ensures the content is not revealed until the animation */
 	border-right: .15rem solid #eeeeee; /* The typewriter cursor */
 	white-space: nowrap; /* Keeps the content on a single line */
@@ -758,7 +760,7 @@ a:active {
 }
 
 
-.designer {
+#home .designer {
 	animation: moving 2s;
 	transform: translateY(0px);
 	animation-delay: 3.4s;
