@@ -66,8 +66,8 @@ const Post = ( {restBase, featuredImage} ) => {
             <article className="single-post" id={`post-${restData.id}`} data-aos="fade-up" data-aos-duration="1000">
                 <h2>{restData.title.rendered}</h2>
                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
-                <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}></div>
-                <div className="single-button-container">
+                <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}} data-aos="fade-up" data-aos-duration="1000"></div>
+                <div className="single-button-container" data-aos="fade-up" data-aos-duration="1000">
                     <button className="live-site">
                         <a href={restData.acf.live_site_button} target="_blank" rel="noopener noreferrer">
                             Live Site

@@ -805,11 +805,12 @@ a:active {
 
 #home .intro-container {
 	display: flex;
+	max-width: 15.5rem;
 }
 
 #home .intro-container h3 {
 	margin: 0.4rem auto 0;
-	  flex: 0 0 auto;
+	flex: 0 0 auto;
 	width: 50%;
 	color: #eeeeee;
 }
