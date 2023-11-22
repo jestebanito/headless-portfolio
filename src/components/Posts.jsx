@@ -1,4 +1,4 @@
-// Posts Component is not needed, but is commented out for later use.
+// // Posts Component is not needed, but is commented out for later use.
 
 // import { useState, useEffect } from 'react'
 // import { Link } from 'react-router-dom'

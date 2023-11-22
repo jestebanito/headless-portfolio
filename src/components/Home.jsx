@@ -8,11 +8,11 @@ import aos from 'aos';
 import 'aos/dist/aos.css';
 
 const Home = ({ restBase, featuredImage }) => {
-    const homePath = restBase + 'pages/17';
-    const worksPath = restBase + 'pages/21';
-    const postsPath = restBase + 'posts?_embed';
-    const aboutPath = restBase + 'pages/12';
-    const connectPath = restBase + 'pages/15';
+    const homePath = restBase + 'pages/17?acf_format=standard&_embed';
+    const worksPath = restBase + 'pages/21?acf_format=standard&_embed';
+    const postsPath = restBase + 'posts?_embed?acf_format=standard&_embed';
+    const aboutPath = restBase + 'pages/12?acf_format=standard&_embed';
+    const connectPath = restBase + 'pages/15?acf_format=standard&_embed';
 
     const [homeData, setHomeData] = useState([]);
     const [worksData, setWorksData] = useState([]);
@@ -54,7 +54,7 @@ const Home = ({ restBase, featuredImage }) => {
     }, []);
       
     // Function to copy email  
-    const [isCopied, setIsCopied] = useState(false);
+    const [setIsCopied] = useState(false);
     const handleCopyClick = async () => {
     const emailText = connectData.acf.connect_email;
     try {
@@ -76,7 +76,7 @@ const Home = ({ restBase, featuredImage }) => {
             section.scrollIntoView({ behavior: 'smooth' });
           } 
     };
-
+    
     return (
         <>
         {isLoaded ? (
@@ -122,12 +122,30 @@ const Home = ({ restBase, featuredImage }) => {
                 {aboutData && (
                 <section id='about'>
                     <h2 data-aos="fade-up" data-aos-duration="1000">About Me</h2>
-                    <div className="entry-content" data-aos="fade-up" data-aos-duration="1000">
-                        <article className="about-article">
+                    <div className="entry-content">
+                        <article className="about-article" data-aos="fade-up" data-aos-duration="1000">
                             <div className='about-intro' dangerouslySetInnerHTML={{ __html:aboutData.acf.about_me_intro}}></div>
                         </article>
                         <div data-aos="fade-up" data-aos-duration="1000">
                             <Drumkit />
+                        </div>
+                        <h2 className="dev-stack-title" data-aos="fade-up" data-aos-duration="1000">Development Stack</h2>
+                        <div className="dev-stack" data-aos="fade-up" data-aos-duration="1000">
+                            {aboutData.acf.development_stack.map((dev, index) => (
+                            <div key={index}>
+                                <img src={dev.dev_icons}></img>
+                                <p>{dev.dev_title}</p>
+                            </div>
+                            ))}
+                        </div>
+                        <h2 className="design-stack-title" data-aos="fade-up" data-aos-duration="1000">Design Stack</h2>
+                        <div className="design-stack" data-aos="fade-up" data-aos-duration="1000">
+                            {aboutData.acf.design_stack.map((design, index) => (
+                            <div key={index}>
+                                <img src={design.design_icons}></img>
+                                <p>{design.design_title}</p>
+                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>

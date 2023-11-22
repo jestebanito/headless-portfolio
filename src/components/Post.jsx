@@ -6,7 +6,7 @@ import copyIcon from '../assets/copy.svg';
 
 const Post = ( {restBase, featuredImage} ) => {
     const { slug } = useParams();
-    const restPath = restBase + `posts/?slug=${slug}&_embed`
+    const restPath = restBase + `posts/?slug=${slug}&acf_format=standard&_embed`;
     const connectPath = restBase + 'pages/15';
 
     const [restData, setData] = useState([])
@@ -34,7 +34,7 @@ const Post = ( {restBase, featuredImage} ) => {
         window.scrollTo({top: 0, behavior: "smooth"});
     };
 
-    const [isCopied, setIsCopied] = useState(false);
+    const [setIsCopied] = useState(false);
 
     const handleCopyClick = async () => {
     const emailText = connectData.acf.connect_email;
@@ -62,17 +62,26 @@ const Post = ( {restBase, featuredImage} ) => {
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}></div>
                 <div className="single-button-container">
                     <button className="live-site">
-                        <a href={restData.acf.live_site_button.url} target="_blank" rel="noopener noreferrer">
-                            {restData.acf.live_site_button.title}
+                        <a href={restData.acf.live_site_button} target="_blank" rel="noopener noreferrer">
+                            Live Site
                         </a>
                     </button>
                     <button className="github-repo">
-                        <a href={restData.acf.github_repo_button.url} target="_blank" rel="noopener noreferrer">
-                            {restData.acf.github_repo_button.title}
+                        <a href={restData.acf.github_repo_button} target="_blank" rel="noopener noreferrer">
+                            Git Repo
                         </a>
                     </button>
                 </div>
-                <h3>More Projects</h3>
+                <h2 className="tool-stack-title">Tools Used</h2>
+                    <div className="tool-stack">
+                        {restData.acf.tools.map(tool =>
+                        <div key={tool.id}>
+                            <img src={tool.tool_icons.url}></img>
+                            <p>{tool.tool_title}</p>
+                        </div>
+                        )}
+                    </div>
+                <h3>More Projects:</h3>
                 <nav className="posts-navigation">
                     {restData.previous_post['id'] &&
                         <Link to={`/work/${restData.previous_post['slug']}`} onClick={scrollToTop} className="prev-post">{restData.previous_post['title']}</Link>
