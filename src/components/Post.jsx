@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import copyIcon from '../assets/copy.svg';
+import aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Post = ( {restBase, featuredImage} ) => {
     const { slug } = useParams();
@@ -51,12 +53,17 @@ const Post = ( {restBase, featuredImage} ) => {
         console.error('Failed to copy text: ', error);
       }
     };
+
+    // Initializes aos dependency 
+    useEffect(() => {
+        aos.init();
+    }, []);
         
     return (
         <>
         { isLoaded ? (
             <>
-            <article className="single-post" id={`post-${restData.id}`}>
+            <article className="single-post" id={`post-${restData.id}`} data-aos="fade-up" data-aos-duration="1000">
                 <h2>{restData.title.rendered}</h2>
                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}></div>
@@ -72,8 +79,8 @@ const Post = ( {restBase, featuredImage} ) => {
                         </a>
                     </button>
                 </div>
-                <h2 className="tool-stack-title">Tools Used</h2>
-                    <div className="tool-stack">
+                <h2 className="tool-stack-title" data-aos="fade-up" data-aos-duration="1000">Tools Used</h2>
+                    <div className="tool-stack" data-aos="fade-up" data-aos-duration="1000">
                         {restData.acf.tools.map((tool, index) =>
                         <div key={index}>
                             <img src={tool.tool_icons.url}></img>
@@ -81,8 +88,8 @@ const Post = ( {restBase, featuredImage} ) => {
                         </div>
                         )}
                     </div>
-                <h3>More Projects:</h3>
-                <nav className="posts-navigation">
+                <h3 data-aos="fade-up" data-aos-duration="1000">More Projects:</h3>
+                <nav className="posts-navigation" data-aos="fade-up" data-aos-duration="1000">
                     {restData.previous_post['id'] &&
                         <Link to={`/work/${restData.previous_post['slug']}`} onClick={scrollToTop} className="prev-post">{restData.previous_post['title']}</Link>
                     }
@@ -94,8 +101,8 @@ const Post = ( {restBase, featuredImage} ) => {
 
             {connectData && (
                 <section id='connect-post'>
-                    <h2>Like what you see?</h2>
-                    <div className="entry-content">
+                    <h2 data-aos="fade-up" data-aos-duration="1000">Like what you see?</h2>
+                    <div className="entry-content" data-aos="fade-up" data-aos-duration="1000">
                         <article>
                             <p>{connectData.acf.connect_short_text}</p>
                             <h3>{connectData.acf.get_in_touch}</h3>
