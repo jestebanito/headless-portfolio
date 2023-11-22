@@ -3,7 +3,7 @@ import App from '../components/App';
 
 const AppRouter = () => {
     return (
-    <Router basename='/dist'>
+    <Router basename='/'>
         <Routes>
             <Route path="*" exact element={<App/>} />
         </Routes>

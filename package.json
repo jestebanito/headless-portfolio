@@ -1,6 +1,6 @@
 {
   "name": "portfolio-react-vite",
-  "homepage": "/dist",
+  "homepage": "/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
