@@ -1155,6 +1155,27 @@ footer {
 /*--------------------------------------------------------------
 # Drums
 --------------------------------------------------------------*/
+.speaker-audio img {
+	top: 10px;
+	left: 10px;
+	width: 35px;
+	border-radius: 10px !important;
+	background-color: #303030;
+	padding: 5px;
+}
+
+@media (min-width: 445px) {
+	.speaker-audio img {
+		width: 40px;
+	}
+}
+
+@media (min-width: 760px) {
+	.speaker-audio img {
+		width: 50px;
+	}
+}
+
 .drums {
 	position: relative;
 	height: 12.3rem;

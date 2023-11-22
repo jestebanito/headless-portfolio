@@ -30,6 +30,9 @@ import vKey from "../assets/keyicons/V-Key.svg";
 import yKey from "../assets/keyicons/Y-Key.svg";
 import jKey from "../assets/keyicons/J-Key.svg";
 
+import unmute from "../assets/soundon.svg";
+import mute from "../assets/soundoff.svg";
+
 
 function Drumkit() {
     const [sounds, setSounds] = useState([
@@ -99,9 +102,14 @@ function Drumkit() {
     ]);
     
     const [isShortcut, setIsShortcut] = useState(false);
+    const [isMute, setIsMute] = useState(true);
     
     const toggleShortcuts = () => {
         setIsShortcut(!isShortcut);
+    }
+
+    const toggleMuteButton = () => {
+        setIsMute(!isMute);
     } 
     
     return (
@@ -111,14 +119,20 @@ function Drumkit() {
                 <button onClick={() => toggleShortcuts()}>
                     {isShortcut ? "Hide shortcuts" : "Show shortcuts" }
                 </button>
-                {sounds.map((sound, i) => (
+                <div className="speaker-audio" onClick={() => toggleMuteButton()}>
+                    {isMute ? <img className="mute" src={mute} alt="mute" /> : <img className="unmute" src={unmute} alt="unmute" />}
+                </div>
+                {sounds.map((sound, index) => (
                     <Drumkeys 
-                    key={i} 
+                    key={index} 
                     name={sound.name}
                     letter={sound.key} 
-                    sound={sound.sound}  
+                    sound={isMute ? sound.sound : null} 
                     icon={sound.icon} 
-                    keyIcon={isShortcut ? sound.keyIcon : null}/>
+                    keyIcon={isShortcut ? sound.keyIcon : null}
+                    isMute={isMute}
+                    toggleMute={toggleMuteButton}
+                    />
                     ))}
             </div>
             </>
