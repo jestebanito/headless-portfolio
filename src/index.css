@@ -1156,12 +1156,17 @@ footer {
 # Drums
 --------------------------------------------------------------*/
 .speaker-audio img {
-	top: 10px;
-	left: 10px;
-	width: 35px;
+	top: 15px;
+	left: 15px;
+	width: 32px;
 	border-radius: 10px !important;
 	background-color: #303030;
+	outline: 3px solid #eeeeee;
 	padding: 5px;
+}
+
+.speaker-audio img:hover {
+	transform: scale(1.1);
 }
 
 @media (min-width: 445px) {
@@ -1172,7 +1177,7 @@ footer {
 
 @media (min-width: 760px) {
 	.speaker-audio img {
-		width: 50px;
+		width: 45px;
 	}
 }
 

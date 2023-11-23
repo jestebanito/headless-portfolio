@@ -116,7 +116,7 @@ function Drumkit() {
             <>
             <h3 className="try-me">TRY ME!</h3>
             <div className="drums">
-                <button onClick={() => toggleShortcuts()}>
+                <button className="shortcuts" onClick={() => toggleShortcuts()}>
                     {isShortcut ? "Hide shortcuts" : "Show shortcuts" }
                 </button>
                 <div className="speaker-audio" onClick={() => toggleMuteButton()}>
