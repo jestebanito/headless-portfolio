@@ -105,9 +105,11 @@ const Home = ({ restBase, featuredImage }) => {
                         {postsData.map(post => 
                         <article key={post.id} id={`post-${post.id}`} data-aos="fade-up" data-aos-duration="1000">
                             <h3>{post.title.rendered}</h3>
+                            <Link to={`/work/${post.slug}`}>
                             {post.featured_media !== 0 && post._embedded &&
                                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                             }
+                            </Link>
                             <div dangerouslySetInnerHTML={{__html:post.acf.react_drum_kit_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.fitness_website_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.javascript_game_overview}}></div>
@@ -133,7 +135,7 @@ const Home = ({ restBase, featuredImage }) => {
                         <div className="dev-stack" data-aos="fade-up" data-aos-duration="1000">
                             {aboutData.acf.development_stack.map((dev, index) => (
                             <div key={index}>
-                                <img src={dev.dev_icons}></img>
+                                <img src={dev.dev_icons.url} alt={dev.dev_icons.alt}></img>
                                 <p>{dev.dev_title}</p>
                             </div>
                             ))}
@@ -142,7 +144,7 @@ const Home = ({ restBase, featuredImage }) => {
                         <div className="design-stack" data-aos="fade-up" data-aos-duration="1000">
                             {aboutData.acf.design_stack.map((design, index) => (
                             <div key={index}>
-                                <img src={design.design_icons}></img>
+                                <img src={design.design_icons.url} alt={design.design_icons.alt}></img>
                                 <p>{design.design_title}</p>
                             </div>
                             ))}

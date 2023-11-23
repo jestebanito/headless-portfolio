@@ -682,6 +682,9 @@ a:active {
 	margin: 0;
 }
 
+.links-container li {
+ 	list-style-type: none;
+}
 
 .links-container a {
 	display: flex;
@@ -933,6 +936,14 @@ a:active {
 	box-shadow: 4px 6px 8px rgba(0,0,0,0.5);
 }
 
+#work .featured-image img {
+	transition: transform 0.3s ease-in-out;
+}
+
+#work .featured-image img:hover {
+	transform: scale(1.03);
+}
+
 #work article h3 {
 	margin: 0.8rem 0;
 	font-size: 1.5rem;
@@ -1156,9 +1167,10 @@ footer {
 # Drums
 --------------------------------------------------------------*/
 .drum-disclaimer {
+	max-width: 95%;
 	font-size: 0.6rem;
 	text-align: center;
-	margin: 0.3rem 0 1.2rem;
+	margin: 0.3rem auto 1.2rem;
 	padding-top: 0;
 }
 

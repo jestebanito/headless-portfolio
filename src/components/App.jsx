@@ -70,10 +70,10 @@ function App() {
           </div>
           <div className='links-container'>
             <ul>
-              <HashLink to='/' className='home-a' onClick={scrollToTop}><img className="home-icon" src={homeIcon} alt="Home" />home</HashLink>
-              <HashLink smooth to='/#work'><img className="work-icon" src={workIcon} alt="Work" />work</HashLink>
-              <HashLink smooth to='/#about'><img className="about-icon" src={aboutIcon} alt="About" />about</HashLink>
-              <Link onClick={() => handleScroll('connect', 'connect-post')}><img className="connect-icon" src={connectIcon} alt="Connect" />connect</Link>
+              <li><HashLink to='/' className='home-a' onClick={scrollToTop}><img className="home-icon" src={homeIcon} alt="Home Section Icon" />home</HashLink></li>
+              <li><HashLink smooth to='/#work'><img className="work-icon" src={workIcon} alt="Work Section Icon" />work</HashLink></li>
+              <li><HashLink smooth to='/#about'><img className="about-icon" src={aboutIcon} alt="About Section Icon" />about</HashLink></li>
+              <li><Link onClick={() => handleScroll('connect', 'connect-post')}><img className="connect-icon" src={connectIcon} alt="Connect Section Icon" />connect</Link></li>
             </ul>
           </div>
         </nav>

@@ -69,13 +69,13 @@ const Post = ( {restBase, featuredImage} ) => {
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}} data-aos="fade-up" data-aos-duration="1000"></div>
                 <div className="single-button-container" data-aos="fade-up" data-aos-duration="1000">
                     <button className="live-site">
-                        <a href={restData.acf.live_site_button} target="_blank" rel="noopener noreferrer">
-                            Live Site
+                        <a href={restData.acf.live_site_button.url} target="_blank" rel="noopener noreferrer">
+                            {restData.acf.live_site_button.title}
                         </a>
                     </button>
                     <button className="github-repo">
-                        <a href={restData.acf.github_repo_button} target="_blank" rel="noopener noreferrer">
-                            Git Repo
+                        <a href={restData.acf.github_repo_button.url} target="_blank" rel="noopener noreferrer">
+                            {restData.acf.github_repo_button.title}
                         </a>
                     </button>
                 </div>
@@ -83,7 +83,7 @@ const Post = ( {restBase, featuredImage} ) => {
                     <div className="tool-stack" data-aos="fade-up" data-aos-duration="1000">
                         {restData.acf.tools.map((tool, index) =>
                         <div key={index}>
-                            <img src={tool.tool_icons.url}></img>
+                            <img src={tool.tool_icons.url} alt={tool.tool_icons.alt}></img>
                             <p>{tool.tool_title}</p>
                         </div>
                         )}
@@ -110,7 +110,7 @@ const Post = ( {restBase, featuredImage} ) => {
                                 <p>{connectData.acf.connect_email}</p>
                                 <img 
                                     src={copyIcon} 
-                                    alt="Copy"
+                                    alt="Copy Icon"
                                     onClick={handleCopyClick} 
                                 />
                                 {/* {isCopied && <span>Copied!</span>} */}
