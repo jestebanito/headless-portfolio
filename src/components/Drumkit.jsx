@@ -115,6 +115,7 @@ function Drumkit() {
     return (
             <>
             <h3 className="try-me">TRY ME!</h3>
+            <p className="drum-disclaimer">To account for potential latency, please enable audio buffering during initial drum play*</p>
             <div className="drums">
                 <button className="shortcuts" onClick={() => toggleShortcuts()}>
                     {isShortcut ? "Hide shortcuts" : "Show shortcuts" }

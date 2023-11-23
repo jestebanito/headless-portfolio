@@ -1042,6 +1042,7 @@ a:active {
 	color: #ffffff;
 	text-align: center;
 	font-weight: 600;
+	margin: 2.5rem 0 0rem;
 }
 
 @media (min-width: 760px) {
@@ -1049,7 +1050,6 @@ a:active {
 		text-align: center;
 		font-weight: 600;
 		font-size: 1.4rem;
-		margin: 2.5rem 0;
 	}
 }
 
@@ -1155,6 +1155,19 @@ footer {
 /*--------------------------------------------------------------
 # Drums
 --------------------------------------------------------------*/
+.drum-disclaimer {
+	font-size: 0.6rem;
+	text-align: center;
+	margin: 0.3rem 0 1.2rem;
+	padding-top: 0;
+}
+
+@media (min-width: 580px) {
+	.drum-disclaimer {
+		font-size: 0.8rem;
+	}
+}
+
 .speaker-audio img {
 	top: 15px;
 	left: 15px;
