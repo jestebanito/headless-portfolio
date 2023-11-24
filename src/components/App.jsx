@@ -2,8 +2,6 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
 import { useEffect } from 'react'
 import Home from './Home'
-// Posts Component is not needed, but is commented out for later use.
-// import Posts from './components/Posts'
 import Post from './Post'
 
 import logo from "../assets/logo.svg";
@@ -81,8 +79,6 @@ function App() {
       <main id="main">
         <Routes>
           <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage} />} />
-          {/* Posts Component is not needed, but is commented out for later use. */}
-          {/* <Route path='/work' element={<Posts restBase={restBase} featuredImage={featuredImage} />} /> */}
           <Route path='/work/:slug' element={<Post restBase={restBase} featuredImage={featuredImage} />} />
         </Routes>
       </main>
