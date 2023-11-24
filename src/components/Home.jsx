@@ -54,7 +54,7 @@ const Home = ({ restBase, featuredImage }) => {
     }, []);
       
     // Function to copy email  
-    const [setIsCopied] = useState(false);
+    const [isCopied, setIsCopied] = useState(false);
     const handleCopyClick = async () => {
     const emailText = connectData.acf.connect_email;
     try {

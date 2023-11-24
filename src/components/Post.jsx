@@ -36,7 +36,7 @@ const Post = ( {restBase, featuredImage} ) => {
         window.scrollTo({top: 0, behavior: "smooth"});
     };
 
-    const [setIsCopied] = useState(false);
+    const [isCopied, setIsCopied] = useState(false);
 
     const handleCopyClick = async () => {
     const emailText = connectData.acf.connect_email;
