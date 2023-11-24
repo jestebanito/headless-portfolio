@@ -69,10 +69,30 @@ function App() {
           </div>
           <div className='links-container'>
             <ul>
-              <li><HashLink to='/' className='home-a' onClick={scrollToTop}><img className="home-icon" src={homeIcon} alt="Home Section Icon" />home</HashLink></li>
-              <li><HashLink smooth to='/#work'><img className="work-icon" src={workIcon} alt="Work Section Icon" />work</HashLink></li>
-              <li><HashLink smooth to='/#about'><img className="about-icon" src={aboutIcon} alt="About Section Icon" />about</HashLink></li>
-              <li><Link onClick={() => handleScroll('connect', 'connect-post')}><img className="connect-icon" src={connectIcon} alt="Connect Section Icon" />connect</Link></li>
+              <li>
+                <HashLink to='/' className='home-a' onClick={scrollToTop}>
+                <img className="home-icon" src={homeIcon} alt="Home Section Icon" aria-label="Home Section Link" />
+                home
+                </HashLink>
+              </li>
+              <li>
+                <HashLink smooth to='/#work'>
+                <img className="work-icon" src={workIcon} alt="Work Section Icon" aria-label="Work Section Link" />
+                work
+                </HashLink>
+              </li>
+              <li>
+                <HashLink smooth to='/#about'>
+                <img className="about-icon" src={aboutIcon} alt="About Section Icon" aria-label="About Section Link" />
+                about
+                </HashLink>
+              </li>
+              <li>
+                <Link onClick={() => handleScroll('connect', 'connect-post')}>
+                <img className="connect-icon" src={connectIcon} alt="Connect Section Icon" aria-label="Connect Section Link"/>
+                connect
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>
