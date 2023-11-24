@@ -61,6 +61,7 @@ function App() {
 
   return (
     <div>
+      <a class="screen-reader-text" href="#work">Skip to Content</a>
       <header id="masthead" className="site-header">
         <nav id="site-navigation" className="site-navigation">
           <div className="logo-container">
