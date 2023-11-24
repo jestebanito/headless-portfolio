@@ -1128,6 +1128,10 @@ a:active {
 	#connect-post article {
 		margin-bottom: 2rem
 	}
+	#main #connect h2 {
+		font-size: 2.6rem;
+		padding-top: 10rem;
+	}
 }
 
 /*--------------------------------------------------------------
