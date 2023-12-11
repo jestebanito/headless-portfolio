@@ -60,8 +60,13 @@ function App() {
     }, []);
 
   return (
-    <div>
-      <a class="screen-reader-text" href="#work">Skip to Content</a>
+    <div className="wrapper">
+            {/* <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span> */}
+      <a className="screen-reader-text" href="#work">Skip to Content</a>
       <header id="masthead" className="site-header">
         <nav id="site-navigation" className="site-navigation">
           <div className="logo-container">

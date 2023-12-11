@@ -121,7 +121,7 @@ function Drumkit() {
                     {isShortcut ? "Hide shortcuts" : "Show shortcuts" }
                 </button>
                 <div className="speaker-audio" onClick={() => toggleMuteButton()}>
-                    {isMute ? <img className="mute" src={mute} alt="mute" /> : <img className="unmute" src={unmute} alt="unmute" />}
+                    {isMute ? <img className="mute" src={unmute} alt="mute" /> : <img className="unmute" src={mute} alt="unmute" />}
                 </div>
                 {sounds.map((sound, index) => (
                     <Drumkeys 

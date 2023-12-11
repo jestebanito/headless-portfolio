@@ -114,7 +114,7 @@ const Home = ({ restBase, featuredImage }) => {
                             <div  dangerouslySetInnerHTML={{__html:post.acf.fitness_website_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.javascript_game_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.movie_database_overview}}></div>
-                            <Link to={`/work/${post.slug}`}><span dangerouslySetInnerHTML={{__html:post.acf.single_page_button}}></span></Link>
+                            <Link to={`/work/${post.slug}`}><div dangerouslySetInnerHTML={{__html:post.acf.single_page_button}}></div></Link>
                         </article>
                         )}
                     </div>

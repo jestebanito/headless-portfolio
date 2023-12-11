@@ -57,7 +57,7 @@ function Drumkeys(props) {
       <div id={`drum-icons ${props.name}`} className="drum-icons">{props.icon}</div>
       <div className="key-icons">{props.keyIcon}</div>
       <div className="speaker-audio" onClick={toggleMute}>
-        {props.isMute ? <img className="mute" src={mute} alt="Mute" /> : <img className="unmute" src={unmute} alt="Unmute" />}
+      {props.isMute ? <img className="mute" src={unmute} alt="mute" /> : <img className="unmute" src={mute} alt="unmute" />}
       </div> 
     </div>
   );
