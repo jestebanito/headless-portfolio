@@ -99,16 +99,20 @@ const Home = ({ restBase, featuredImage }) => {
                 )}
     
                 {worksData && (
-                <section id='work'>
+                    <section id='work'>
                     <h2 data-aos="fade-up" data-aos-duration="1000">My Work</h2>
                     <div className="entry-content">
                         {postsData.map(post => 
                         <article key={post.id} id={`post-${post.id}`} data-aos="fade-up" data-aos-duration="1000">
                             <h3>{post.title.rendered}</h3>
                             <Link to={`/work/${post.slug}`}>
-                            {post.featured_media !== 0 && post._embedded &&
+                            {/* {post.featured_media !== 0 && post._embedded &&
                                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
-                            }
+                            } */}
+                            <video className="featured-video" autoPlay loop>
+                                <source src={post.acf.project_snippets} type="video/mp4" />
+                            Your browser does not support the video tag.
+                            </video>
                             </Link>
                             <div dangerouslySetInnerHTML={{__html:post.acf.react_drum_kit_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.fitness_website_overview}}></div>
@@ -124,6 +128,13 @@ const Home = ({ restBase, featuredImage }) => {
                 {aboutData && (
                 <section id='about'>
                     <h2 data-aos="fade-up" data-aos-duration="1000">About Me</h2>
+                    {aboutData.featured_media !== 0 && aboutData._embedded &&
+                        <figure className="featured-image"
+                        dangerouslySetInnerHTML={featuredImage
+                        (aboutData._embedded['wp:featuredmedia'][0])}
+                        data-aos="fade-up" data-aos-duration="1000">
+                        </figure>
+                    }
                     <div className="entry-content">
                         <article className="about-article" data-aos="fade-up" data-aos-duration="1000">
                             <div className='about-intro' dangerouslySetInnerHTML={{ __html:aboutData.acf.about_me_intro}}></div>

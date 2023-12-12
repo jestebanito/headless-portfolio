@@ -533,6 +533,7 @@ a:active {
 .single-post .design-stack, 
 .single-post .tool-stack {
 	width: 100%;
+	line-height: 0;
 }
 
 .dev-stack img, 
@@ -945,6 +946,22 @@ a:active {
 	transform: scale(1.03);
 }
 
+.featured-video {
+	display: block;
+	border-radius: 0.8rem;
+	width: 100%;
+	margin: 0 auto;
+	box-shadow: 4px 6px 8px rgba(0,0,0,0.5);
+}
+
+#work .featured-video {
+	transition: transform 0.3s ease-in-out;
+}
+
+#work .featured-video:hover {
+	transform: scale(1.03);
+}
+
 #work article h3 {
 	margin: 0.8rem 0;
 	font-size: 1.5rem;
@@ -974,8 +991,8 @@ a:active {
 	max-width: 45rem;
 }
 
-.single-post .entry-content {
-	margin: 1rem 0 0;
+.single-post .entry-content h3{
+	margin: 2rem 0 0;
 }
 
 .single-post .posts-navigation {
@@ -1057,11 +1074,21 @@ a:active {
 	margin: 2.5rem 0 0rem;
 }
 
+#about .featured-image {
+	width: 20rem;
+	margin: 0 auto 2rem;
+	padding: 0 1rem;
+}
+
 @media (min-width: 760px) {
 	#about .try-me {
 		text-align: center;
 		font-weight: 600;
 		font-size: 1.4rem;
+	}
+
+	#about .featured-image {
+		width: 25rem;
 	}
 }
 

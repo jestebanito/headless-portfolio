@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
@@ -14,6 +14,7 @@ const Post = ( {restBase, featuredImage} ) => {
     const [restData, setData] = useState([])
     const [connectData, setConnectData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false)
+    const videoRef = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,6 +28,13 @@ const Post = ( {restBase, featuredImage} ) => {
                 setLoadStatus(true)
             } else {
                 setLoadStatus(false)
+            }
+            if (videoRef.current) {
+                // Reset the video when restData changes (e.g., navigating to a new post)
+                videoRef.current.pause();
+                videoRef.current.currentTime = 0;
+                videoRef.current.load(); // Load the new video
+                videoRef.current.play(); // Start playing the new video
             }
         }
         fetchData()
@@ -65,7 +73,11 @@ const Post = ( {restBase, featuredImage} ) => {
             <>
             <article className="single-post" id={`post-${restData.id}`} data-aos="fade-up" data-aos-duration="1000">
                 <h2>{restData.title.rendered}</h2>
-                <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure>
+                {/* <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure> */}
+                <video className="featured-video" ref={videoRef} autoPlay loop>
+                <source src={restData.acf.project_snippets} type="video/mp4" />
+                Your browser does not support the video tag.
+                </video>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}} data-aos="fade-up" data-aos-duration="1000"></div>
                 <div className="single-button-container" data-aos="fade-up" data-aos-duration="1000">
                     <button className="live-site">
