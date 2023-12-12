@@ -26,15 +26,15 @@ const Post = ( {restBase, featuredImage} ) => {
                 setData(data[0])
                 setConnectData(connectData);
                 setLoadStatus(true)
+                if (videoRef.current) {
+                    // Reset the video when restData changes (e.g., navigating to a new post)
+                    // videoRef.current.pause();
+                    videoRef.current.currentTime = 0;
+                    videoRef.current.load(); // Load the new video
+                    videoRef.current.play(); // Start playing the new video
+                }
             } else {
                 setLoadStatus(false)
-            }
-            if (videoRef.current) {
-                // Reset the video when restData changes (e.g., navigating to a new post)
-                videoRef.current.pause();
-                videoRef.current.currentTime = 0;
-                videoRef.current.load(); // Load the new video
-                videoRef.current.play(); // Start playing the new video
             }
         }
         fetchData()
@@ -74,7 +74,7 @@ const Post = ( {restBase, featuredImage} ) => {
             <article className="single-post" id={`post-${restData.id}`} data-aos="fade-up" data-aos-duration="1000">
                 <h2>{restData.title.rendered}</h2>
                 {/* <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure> */}
-                <video className="featured-video" ref={videoRef} autoPlay loop>
+                <video className="featured-video" ref={videoRef} autoPlay muted loop>
                 <source src={restData.acf.project_snippets} type="video/mp4" />
                 Your browser does not support the video tag.
                 </video>

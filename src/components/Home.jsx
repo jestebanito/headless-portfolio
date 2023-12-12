@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import Loading from './Loading';
 import Drumkit from './Drumkit';
@@ -20,7 +20,6 @@ const Home = ({ restBase, featuredImage }) => {
     const [aboutData, setAboutData] = useState([]);
     const [connectData, setConnectData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
-    const videoRef = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -43,13 +42,6 @@ const Home = ({ restBase, featuredImage }) => {
                 setLoadStatus(true);
             } else {
                 setLoadStatus(false)
-            }
-            if (videoRef.current) {
-                // Reset the video when restData changes (e.g., navigating to a new post)
-                videoRef.current.pause();
-                videoRef.current.currentTime = 0;
-                videoRef.current.load(); // Load the new video
-                videoRef.current.play(); // Start playing the new video
             }
         };
         fetchData();
@@ -117,7 +109,7 @@ const Home = ({ restBase, featuredImage }) => {
                             {/* {post.featured_media !== 0 && post._embedded &&
                                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                             } */}
-                            <video className="featured-video" ref={videoRef} autoPlay loop>
+                            <video className="featured-video" autoPlay muted loop>
                                 <source src={post.acf.project_snippets} type="video/mp4" />
                             Your browser does not support the video tag.
                             </video>
