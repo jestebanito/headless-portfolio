@@ -169,7 +169,7 @@ const Home = ({ restBase, featuredImage }) => {
                     <h2 data-aos="fade-up" data-aos-duration="1000">Like what you see?</h2>
                     <div className="entry-content" data-aos="fade-up" data-aos-duration="1000">
                         <article>
-                            <p>{connectData.acf.connect_short_text}</p>
+                            <p className="short-text">{connectData.acf.connect_short_text}</p>
                             <h3>{connectData.acf.get_in_touch}</h3>
                             <div className="email-container">
                                 <p>{connectData.acf.connect_email}</p>

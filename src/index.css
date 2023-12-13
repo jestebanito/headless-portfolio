@@ -1104,6 +1104,13 @@ a:active {
 	margin-bottom: 2rem;
 }
 
+#connect article .short-text {
+	max-width: 26rem;
+	margin: 0 auto;
+	text-align: left;
+	padding-left: 10px;
+}
+
 #connect article h3, #connect-post article h3 {
 	text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
 	color: #ffffff;
