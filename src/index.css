@@ -1081,6 +1081,10 @@ a:active {
 	padding: 0 1rem;
 }
 
+#about .featured-image img {
+	border-radius: 15%;
+}
+
 @media (min-width: 760px) {
 	#about .try-me {
 		text-align: center;
