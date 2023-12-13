@@ -1104,7 +1104,7 @@ a:active {
 	margin-bottom: 2rem;
 }
 
-#connect article .short-text {
+article .short-text {
 	max-width: 35rem;
 	margin: 0 auto;
 	text-align: left;
