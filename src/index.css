@@ -811,7 +811,8 @@ a:active {
 
 #home .intro-container {
 	display: flex;
-	max-width: 15.5rem;
+	max-width: 16.5rem;
+	padding-left: 0.4rem;
 }
 
 #home .intro-container h3 {
@@ -819,6 +820,17 @@ a:active {
 	flex: 0 0 auto;
 	width: 50%;
 	color: #eeeeee;
+}
+
+@media (max-width: 760px) {
+	#home .intro-container {
+		display: flex;
+		max-width: 14rem;
+	}
+
+	#home .intro-container h3 {
+		font-size: 1.2rem;
+	}
 }
 
 /* Homepage Down Arrow Animation */
