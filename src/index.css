@@ -820,6 +820,7 @@ a:active {
 	flex: 0 0 auto;
 	width: 50%;
 	color: #eeeeee;
+	line-height: 1.4rem;
 }
 
 @media (max-width: 760px) {
@@ -827,9 +828,10 @@ a:active {
 		display: flex;
 		max-width: 14rem;
 	}
-
+	
 	#home .intro-container h3 {
 		font-size: 1.2rem;
+		line-height: 1.2rem;
 	}
 }
 
