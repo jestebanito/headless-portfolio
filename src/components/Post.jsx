@@ -74,7 +74,7 @@ const Post = ( {restBase, featuredImage} ) => {
             <article className="single-post" id={`post-${restData.id}`} data-aos="fade-up" data-aos-duration="1000">
                 <h2>{restData.title.rendered}</h2>
                 {/* <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure> */}
-                <video className="featured-video" ref={videoRef} autoPlay muted loop>
+                <video className="featured-video" ref={videoRef} autoplay playsinline muted loop>
                 <source src={restData.acf.project_snippets} type="video/mp4" />
                 Your browser does not support the video tag.
                 </video>
