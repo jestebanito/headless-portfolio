@@ -109,7 +109,7 @@ const Home = ({ restBase, featuredImage }) => {
                             {/* {post.featured_media !== 0 && post._embedded &&
                                 <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(post._embedded['wp:featuredmedia'][0])}></figure>
                             } */}
-                            <video className="featured-video" autoplay playsinline muted loop>
+                            <video className="featured-video" autoPlay playsInline muted loop>
                                 <source src={post.acf.project_snippets} type="video/mp4" />
                             Your browser does not support the video tag.
                             </video>
