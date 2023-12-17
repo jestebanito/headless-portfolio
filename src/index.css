@@ -812,7 +812,6 @@ a:active {
 #home .intro-container {
 	display: flex;
 	max-width: 16.5rem;
-	padding-left: 0.4rem;
 }
 
 #home .intro-container h3 {
@@ -876,6 +875,7 @@ a:active {
 	animation-delay: 1s;
 	opacity: 0;
 	animation-fill-mode: forwards;
+	padding-left: 0.5rem;
 }
 
 @keyframes typing {
@@ -886,6 +886,12 @@ a:active {
 @keyframes blink-caret {
 	from, to { border-color: transparent }
 	50% { border-color: #eeeeee; }
+}
+
+@media (min-width: 760px) {
+	#home .typewriter {
+		padding-left: 0.2rem;
+	}
 }
 
 /* Homepage "designer" Intro Animation */
