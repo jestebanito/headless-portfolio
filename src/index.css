@@ -901,7 +901,7 @@ a:active {
 	animation-delay: 3.4s;
 	opacity: 0;
 	animation-fill-mode: forwards;
-	padding-right: 0.5rem;
+	padding-right: 0.2rem;
 }
 
 @keyframes moving {
