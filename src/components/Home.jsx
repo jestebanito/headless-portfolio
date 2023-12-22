@@ -160,6 +160,15 @@ const Home = ({ restBase, featuredImage }) => {
                             </div>
                             ))}
                         </div>
+                        <h2 className="current-stack-title" data-aos="fade-up" data-aos-duration="1000">Currently Learning</h2>
+                        <div className="design-stack" data-aos="fade-up" data-aos-duration="1000">
+                            {aboutData.acf.currently_learning.map((learning, index) => (
+                            <div key={index}>
+                                <img src={learning.learning_icons.url} alt={learning.learning_icons.alt}></img>
+                                <p>{learning.learning_title}</p>
+                            </div>
+                            ))}
+                        </div>
                     </div>
                 </section>
                 )}

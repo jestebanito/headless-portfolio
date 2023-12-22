@@ -875,7 +875,7 @@ a:active {
 	animation-delay: 1s;
 	opacity: 0;
 	animation-fill-mode: forwards;
-	padding-left: 0.5rem;
+	padding-left: 2%;
 }
 
 @keyframes typing {
