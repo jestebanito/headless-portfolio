@@ -508,7 +508,8 @@ a:active {
 --------------------------------------------------------------*/
 .dev-stack, 
 .design-stack, 
-.tool-stack {
+.tool-stack,
+.currently-learning {
 	width: 95%;
 	margin: 0 auto;
 	display: flex;
@@ -523,7 +524,8 @@ a:active {
 @media (min-width: 580px) {
 	.dev-stack, 
 	.design-stack, 
-	.tool-stack {
+	.tool-stack,
+	.currently-learning {
 		width: 70%;
 	}
 }
@@ -538,7 +540,8 @@ a:active {
 }
 
 .dev-stack img, 
-.design-stack img, 
+.design-stack img,
+.currently-learning img, 
 .tool-stack img {
 	padding: 0 2.5rem;
 
@@ -546,12 +549,14 @@ a:active {
 
 .dev-stack p, 
 .design-stack p, 
-.tool-stack p {
+.tool-stack p,
+.currently-learning p {
 	margin-bottom: 0;
 }
 
 #main section .dev-stack-title, 
-#main section .design-stack-title, 
+#main section .design-stack-title,
+#main section .currently-learning-title, 
 .single-post .tool-stack-title {
 	padding-top: 3rem;
 }
