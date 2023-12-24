@@ -70,9 +70,9 @@ function Drumkeys(props) {
     e.stopPropagation();
   };
 
-  const handleTouchEnd = (event) => {
-    if (event.cancelable) {
-      event.preventDefault();
+  const handleTouchEnd = (e) => {
+    if (e.cancelable) {
+      e.preventDefault();
     }
     touchHandled.current = false;
   };
@@ -81,7 +81,7 @@ function Drumkeys(props) {
     <div className={`drum ${playing}`} onClick={play} onTouchStart={play} onTouchEnd={handleTouchEnd}>
       <div id={`drum-icons ${props.name}`} className="drum-icons">{props.icon}</div>
       <div className="key-icons">{props.keyIcon}</div>
-      <div className="speaker-audio" onClick={toggleMute}>
+      <div className="speaker-audio" onClick={toggleMute} onTouchStart={toggleMute}>
       {props.isMute ? <img className="mute" src={unmute} alt="mute" /> : <img className="unmute" src={mute} alt="unmute" />}
       </div> 
     </div>
