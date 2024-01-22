@@ -702,6 +702,7 @@ a:active {
 	font-weight: 500;
 	font-size: 0.8rem;
 	color: #ffffff;
+	transition: transform 0.2s ease-in-out;
 }
 
 .links-container a img {
@@ -719,6 +720,7 @@ a:active {
 
 .logo-container a img{
 	margin: 5.5px 0 -6px;
+	transition: transform 0.2s ease-in-out;
 }
 
 @media (min-width: 580px) {
@@ -754,7 +756,7 @@ a:active {
 
 	.links-container a:hover {
 		text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
-		transform: scale(1.08);
+		transform: scale(1.1);
 	}
 
 	.links-container .home-a {
