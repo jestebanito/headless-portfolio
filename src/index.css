@@ -705,6 +705,20 @@ a:active {
 	transition: transform 0.2s ease-in-out;
 }
 
+.links-container .work-link::after, 
+.links-container .about-link::after, 
+.links-container .connect-link::after {
+	content: '';
+	height: 4px;
+	background: white;
+	display: inline-block;
+	/* position: relative; */
+	/* left: 0; */
+	/* bottom: 0; */
+	width: 0;
+	transition: width 0.3s;
+}
+
 .links-container a img {
 	width: 25px;
 	height: 25px;
@@ -757,6 +771,12 @@ a:active {
 	.links-container a:hover {
 		text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
 		transform: scale(1.1);
+	}
+
+	.links-container .work-link:hover::after,
+	.links-container .about-link:hover::after, 
+	.links-container .connect-link:hover::after {
+		width: 100%;
 	}
 
 	.links-container .home-a {
