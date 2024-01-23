@@ -81,19 +81,19 @@ function App() {
                 </HashLink>
               </li>
               <li>
-                <HashLink smooth to='/#work' className='work-link'>
+                <HashLink smooth to='/#work'>
                 <img className="work-icon" src={workIcon} alt="Work Section Icon" aria-label="Work Section Link" />
                 work
                 </HashLink>
               </li>
               <li>
-                <HashLink smooth to='/#about' className='about-link'>
+                <HashLink smooth to='/#about'>
                 <img className="about-icon" src={aboutIcon} alt="About Section Icon" aria-label="About Section Link" />
                 about
                 </HashLink>
               </li>
               <li>
-                <Link onClick={() => handleScroll('connect', 'connect-post')} className='connect-link'>
+                <Link onClick={() => handleScroll('connect', 'connect-post')}>
                 <img className="connect-icon" src={connectIcon} alt="Connect Section Icon" aria-label="Connect Section Link"/>
                 connect
                 </Link>
