@@ -9,7 +9,7 @@ html {
 
 body {
 	margin: 0;
-	background-color: #454545;
+	background-color: #424242;
 }
 
 header {
@@ -701,13 +701,13 @@ a:active {
 	font-family: 'Albert Sans', sans-serif;
 	font-weight: 500;
 	font-size: 0.8rem;
-	color: #ffffff;
+	color: #dfdfdf;
 	transition: transform 0.2s ease-in-out;
 }
 
 .links-container a:not(first-child)::after {
 	content: '';
-	height: 3px;
+	height: 2.5px;
 	background: #ffffff;
 	display: block;
 	position: relative;
@@ -721,6 +721,7 @@ a:active {
 	width: 25px;
 	height: 25px;
 	margin: 0 auto;
+	filter: brightness(87%);
 }
 
 .logo-container {
@@ -733,6 +734,27 @@ a:active {
 .logo-container a img{
 	margin: 5.5px 0 -6px;
 	transition: transform 0.2s ease-in-out;
+}
+
+@media (max-width: 579px) {
+	.links-container li {
+		width: 3.5rem;
+		padding-top: 8px;
+		margin-bottom: 5px;
+		border-radius: 20%;
+    }
+
+	.links-container li:active {
+		box-shadow: inset 3px 5px 6px rgba(0,0,0,0.6);
+	}
+
+	.links-container a img:active {
+		padding-top: 1px;
+	}
+	
+	.links-container a:active {
+		font-size: 0.75rem;
+	}
 }
 
 @media (min-width: 580px) {
@@ -757,7 +779,7 @@ a:active {
 	}
 	
 	.links-container a {
-		color:#FFFFFF;
+		color:#ffffff;
 		font-size: 1.5rem;
 		font-weight: 800;
 	}
@@ -770,7 +792,7 @@ a:active {
 		text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
 		transform: scale(1.1);
 	}
-
+ 
 	.links-container a:not(first-child):hover::after {
 		width: 100%;
 		left: 0;
@@ -797,10 +819,10 @@ a:active {
 	}
 
 	.logo-container a img:hover {
-		box-shadow: 3px 5px 6px rgba(0,0,0,0.6);
-		transform: scale(1.05);
+		box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
+		transform: scale(1.1);
 	}
-	
+
 	.site-navigation a {
 		display: block;
 		padding: 1.5rem 0.8rem;
