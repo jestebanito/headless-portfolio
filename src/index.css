@@ -677,7 +677,7 @@ a:active {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	padding: 0.8rem 1.25rem 0.4rem;
+	padding: 0.4rem 1.25rem 0.2rem;
 	max-width: 75rem;
 	margin: 0 auto;
 	background-color: #303030;
@@ -687,7 +687,7 @@ a:active {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 0;
+	margin: -2px auto -4px;
 }
 
 .links-container li {
@@ -720,7 +720,7 @@ a:active {
 .links-container a img {
 	width: 25px;
 	height: 25px;
-	margin: 0 auto;
+	margin: 0.5rem auto 0;
 	filter: brightness(87%);
 }
 
@@ -731,7 +731,7 @@ a:active {
 	background-color: #303030;
 }
 
-.logo-container a img{
+.logo-container a img {
 	margin: 5.5px 0 -6px;
 	transition: transform 0.2s ease-in-out;
 }
@@ -739,7 +739,7 @@ a:active {
 @media (max-width: 579px) {
 	.links-container li {
 		width: 3.5rem;
-		padding-top: 8px;
+		padding: 1px 0;
 		margin-bottom: 5px;
 		border-radius: 20%;
     }
@@ -749,7 +749,7 @@ a:active {
 	}
 
 	.links-container a img:active {
-		padding-top: 1px;
+		padding-top: 1.5px;
 	}
 	
 	.links-container a:active {
