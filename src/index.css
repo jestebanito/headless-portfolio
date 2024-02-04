@@ -793,7 +793,8 @@ a:active {
 		transform: scale(1.1);
 	}
  
-	.links-container a:not(first-child):hover::after {
+	.links-container a:not(first-child):hover::after,
+	.links-container a:not(first-child):focus::after {
 		width: 100%;
 		left: 0;
 	}
