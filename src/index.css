@@ -9,7 +9,20 @@ html {
 
 body {
 	margin: 0;
-	background-color: #424242;
+	background-color: #303030;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(assets/dark-background.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+    filter: grayscale(100%);
+    z-index: -1; /* Ensure the pseudo-element is behind other content */
 }
 
 header {
@@ -244,7 +257,7 @@ h6 {
 .site-header {
 	text-align: center;
 	box-shadow: 3px 5px 10px rgba(0,0,0,0.5);
-	background-color: #303030;
+	background-color: rgba(30, 30, 30, 0.95);
 }
 
 p.site-title {
@@ -593,6 +606,10 @@ a:active {
 	margin-bottom: 2rem;
 }
 
+#main section .my-work {
+	padding-top: 12.5rem;
+}
+
 #main article {
 	position: relative;
 	display: block;
@@ -728,12 +745,12 @@ a:active {
 	box-shadow: 0px 0px 20px -15px;
 	padding-bottom: 5px;
 	margin-top: -1px;
-	background-color: #303030;
 }
 
 .logo-container a img {
 	margin: 5.5px 0 -6px;
 	transition: transform 0.2s ease-in-out;
+	max-width: 100%;
 }
 
 @media (max-width: 579px) {
@@ -766,8 +783,8 @@ a:active {
 
 	.links-container {
 		position: static;
-		padding: 0.5em 1.25rem 0;
-		background-color: #303030;
+		padding: 0.9rem 1.25rem 0.7rem;
+		background-color: transparent;
 	}
 	
 	.links-container ul {
@@ -780,7 +797,7 @@ a:active {
 	
 	.links-container a {
 		color:#ffffff;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		font-weight: 800;
 	}
 
@@ -793,8 +810,7 @@ a:active {
 		transform: scale(1.1);
 	}
  
-	.links-container a:not(first-child):hover::after,
-	.links-container a:not(first-child):focus::after {
+	.links-container a:not(first-child):hover::after {
 		width: 100%;
 		left: 0;
 	}
@@ -807,13 +823,13 @@ a:active {
 		display: flex;
 		justify-content: flex-start;
 		position: absolute;
-		top: 2px;
+		top: 6px;
 		left: 15px;
 		box-shadow: 0px 0px;
 		padding-bottom: 0;
 		margin: 0;
 	}
-	
+
 	.logo-container a img {
 		margin: -10px 0 -20px;
 		border-radius: 50%;
@@ -866,7 +882,8 @@ a:active {
 	flex: 0 0 auto;
 	width: 50%;
 	color: #eeeeee;
-	line-height: 1.4rem;
+	line-height: 2rem;
+	text-shadow: 1px 2px 2.1px rgba(0,0,0,0.6);
 }
 
 @media (max-width: 760px) {
@@ -877,7 +894,7 @@ a:active {
 	
 	#home .intro-container h3 {
 		font-size: 1.2rem;
-		line-height: 1.2rem;
+		line-height: 1.6rem;
 	}
 }
 
@@ -912,12 +929,12 @@ a:active {
 /* Homepage "developer|" Intro Animation */
 #home .typewriter {
 	overflow: hidden;
-	border-right: .15rem solid #eeeeee;
+	/* border-right: .15rem solid #eeeeee; */
 	white-space: nowrap;
 	margin: 0 auto;
 	animation: 
-	typing 2.2s steps(40, end),
-	blink-caret 1.2s step-end infinite;
+	typing 2s steps(40, end);
+	/* blink-caret 1s steps(1) 2; */
 	text-align: left;
 	animation-delay: 1s;
 	opacity: 0;
@@ -930,10 +947,10 @@ a:active {
 	to { width: 50%; opacity: 1;}
 }
 
-@keyframes blink-caret {
+/* @keyframes blink-caret {
 	from, to { border-color: transparent }
 	50% { border-color: #eeeeee; }
-}
+} */
 
 @media (min-width: 760px) {
 	#home .typewriter {
@@ -945,7 +962,7 @@ a:active {
 #home .designer {
 	animation: moving 2s;
 	transform: translateY(0px);
-	animation-delay: 3.4s;
+	animation-delay: 3s;
 	opacity: 0;
 	animation-fill-mode: forwards;
 	padding-right: 0.2rem;
@@ -1259,8 +1276,8 @@ footer {
 		display: block;
 		bottom: 0;
 		padding: 1.5rem;
-		background-color: #303030;
-		width: 100%
+		background-color: transparent;
+		width: 100%;
 	}
 	
 	footer p {

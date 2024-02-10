@@ -108,9 +108,6 @@ function App() {
           <Route path='/work/:slug' element={<Post restBase={restBase} featuredImage={featuredImage} />} />
         </Routes>
       </main>
-      <footer>
-        <p className="copyright">&copy; 2023 Josh Esteban</p>
-      </footer>
     </div>
   );
 }

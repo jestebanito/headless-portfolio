@@ -70,10 +70,11 @@ const Home = ({ restBase, featuredImage }) => {
       }
     };
 
-    const handleScroll = (sectionId) => {
+    const handleScroll = (sectionId, offset) => {
         const section = document.getElementById(sectionId);
           if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({ behavior: 'smooth', top: offset || 0, block: 'start',
+            inline: 'start'});
           } 
     };
     
@@ -92,7 +93,7 @@ const Home = ({ restBase, featuredImage }) => {
                         <img 
                             src={downIcon} 
                             alt="Skip to content"
-                            onClick={() => handleScroll('work')} 
+                            onClick={() => handleScroll('work', 50)} 
                         />
                         </button>
                 </section>
@@ -100,7 +101,7 @@ const Home = ({ restBase, featuredImage }) => {
     
                 {worksData && (
                     <section id='work'>
-                    <h2 data-aos="fade-up" data-aos-duration="1000">My Work</h2>
+                    <h2 data-aos="fade-up" data-aos-duration="1000" className="my-work" id="my-work">My Work</h2>
                     <div className="entry-content">
                         {postsData.map(post => 
                         <article key={post.id} id={`post-${post.id}`} data-aos="fade-up" data-aos-duration="1000">
@@ -197,6 +198,9 @@ const Home = ({ restBase, featuredImage }) => {
                     </div>
                 </section>
                 )}
+                <footer>
+                    <p className="copyright">&copy; 2024 Handcrafted by Josh Esteban</p>
+                </footer>
             </div>
         ) : (
             <Loading />
