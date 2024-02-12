@@ -61,24 +61,19 @@ function App() {
 
   return (
     <div className="wrapper">
-            {/* <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span> */}
-              <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
       <a className="screen-reader-text" href="#work">Skip to Content</a>
       <header id="masthead" className="site-header">
         <nav id="site-navigation" className="site-navigation">

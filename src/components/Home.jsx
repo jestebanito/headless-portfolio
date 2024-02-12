@@ -45,23 +45,19 @@ const Home = ({ restBase, featuredImage }) => {
             }
         };
         fetchData();
-        // Sets loading status to true after all data is fetched
     }, [homePath, worksPath, postsPath, aboutPath, connectPath]);
 
-    // Initializes aos dependency 
     useEffect(() => {
         aos.init();
     }, []);
       
-    // Function to copy email  
     const [isCopied, setIsCopied] = useState(false);
     const handleCopyClick = async () => {
     const emailText = connectData.acf.connect_email;
     try {
         await navigator.clipboard.writeText(emailText);
         setIsCopied(true);
-  
-        // Reset the copied state after a short delay
+        
         setTimeout(() => {
           setIsCopied(false);
         }, 700);

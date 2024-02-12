@@ -27,11 +27,9 @@ const Post = ( {restBase, featuredImage} ) => {
                 setConnectData(connectData);
                 setLoadStatus(true)
                 if (videoRef.current) {
-                    // Reset the video when restData changes (e.g., navigating to a new post)
-                    // videoRef.current.pause();
                     videoRef.current.currentTime = 0;
-                    videoRef.current.load(); // Load the new video
-                    videoRef.current.play(); // Start playing the new video
+                    videoRef.current.load();
+                    videoRef.current.play();
                 }
             } else {
                 setLoadStatus(false)
@@ -53,7 +51,6 @@ const Post = ( {restBase, featuredImage} ) => {
         await navigator.clipboard.writeText(emailText);
         setIsCopied(true);
   
-        // Reset the copied state after a short delay
         setTimeout(() => {
           setIsCopied(false);
         }, 700);
@@ -62,7 +59,6 @@ const Post = ( {restBase, featuredImage} ) => {
       }
     };
 
-    // Initializes aos dependency 
     useEffect(() => {
         aos.init();
     }, []);
