@@ -1242,6 +1242,11 @@ article .short-text {
 	fill: #171515;
 }
 
+.social-container .linked-in rect,
+.social-container .git-hub rect {
+	fill: transparent !important;
+}
+
 @media (min-width: 580px) {
 	#connect article {
 		margin-bottom: 2rem;
