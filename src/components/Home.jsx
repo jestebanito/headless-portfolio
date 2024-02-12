@@ -83,7 +83,7 @@ const Home = ({ restBase, featuredImage }) => {
         {isLoaded ? (
             <div>
                 {homeData && (
-                <section id='home'>
+                    <section id='home'>
                     <h1>Josh Esteban</h1>          
                         <article className="intro-container">
                             <h3 className="typewriter">{homeData.acf.developer}</h3>
