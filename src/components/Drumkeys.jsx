@@ -8,13 +8,11 @@ function Drumkeys(props) {
   const touchHandled = useRef(false);
 
   const play = (e) => {
-    // Check if the event is from touch or click
     const isTouchEvent = e && e.type === "touchstart";
   
     if (!isMuted) {
       const audio = new Audio(props.sound);
   
-      // If it's not playing, play the sound
       if (!playing || !isTouchEvent) {
         setPlaying(true);
         audio.play();
@@ -23,7 +21,6 @@ function Drumkeys(props) {
           setPlaying(false);
         };
       } else {
-        // If it's already playing and the event is from touch, restart the sound
         if (isTouchEvent && !touchHandled.current) {
           audio.currentTime = 0;
           audio.play();
@@ -31,7 +28,6 @@ function Drumkeys(props) {
       }
     }
   
-    // Prevent default only for touch events if needed
     if (isTouchEvent && e.cancelable) {
       e.preventDefault();
     }
