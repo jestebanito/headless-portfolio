@@ -59,6 +59,19 @@ function App() {
       } 
     }, []);
 
+    window.addEventListener('scroll', function() {
+      var header = document.getElementById('masthead');
+      if (window.scrollY > 0) {
+        header.classList.add('visible');
+        header.style.backgroundColor = 'rgba(30, 30, 30, 0.95)';
+        header.style.boxShadow = '3px 5px 10px rgba(0,0,0,0.5)';
+      } else {
+        header.style.backgroundColor = 'transparent';
+        header.style.boxShadow = 'none';
+        header.classList.remove('visible');
+      }
+    });
+
   return (
     <div className="wrapper">
       <ul class="circles">
