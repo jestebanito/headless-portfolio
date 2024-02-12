@@ -65,7 +65,7 @@ a {
 }
 
 a:active,
-a:hover {
+button:active {
 	-webkit-tap-highlight-color: transparent;
     outline: none;
     -ms-touch-action: manipulation;
