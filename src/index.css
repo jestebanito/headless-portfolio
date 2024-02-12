@@ -781,7 +781,7 @@ a:active {
 
 	.links-container {
 		position: static;
-		padding: 0.9rem 1.25rem 0.7rem;
+		padding: 0.3rem 1.25rem 0.1rem;
 		background-color: transparent;
 	}
 	
@@ -821,7 +821,7 @@ a:active {
 		display: flex;
 		justify-content: flex-start;
 		position: absolute;
-		top: 6px;
+		top: -3px;
 		left: 15px;
 		box-shadow: 0px 0px;
 		padding-bottom: 0;
@@ -1827,13 +1827,13 @@ span:nth-child(5) {
 
 
 @keyframes animate {
-    0%{
+    0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
         border-radius: 0;
     }
 
-    100%{
+    100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
         border-radius: 30%;
