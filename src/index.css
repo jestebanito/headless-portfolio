@@ -585,7 +585,7 @@ a:active {
 	position: fixed;
     top: 40%;
     left: 50%;
-	width: 4rem;
+	width: 3rem;
     transform: translate(-50%, -50%);
 }
 
