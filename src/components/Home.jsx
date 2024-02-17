@@ -111,10 +111,11 @@ const Home = ({ restBase, featuredImage }) => {
                             Your browser does not support the video tag.
                             </video>
                             </Link>
-                            <div dangerouslySetInnerHTML={{__html:post.acf.react_drum_kit_overview}}></div>
+                            <div className="react-drum-kit" dangerouslySetInnerHTML={{__html:post.acf.react_drum_kit_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.fitness_website_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.javascript_game_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.movie_database_overview}}></div>
+                            <div  dangerouslySetInnerHTML={{__html:post.acf.portfolio_overview}}></div>
                             <Link to={`/work/${post.slug}`}><div dangerouslySetInnerHTML={{__html:post.acf.single_page_button}}></div></Link>
                         </article>
                         )}

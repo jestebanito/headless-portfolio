@@ -1066,6 +1066,11 @@ a:active {
 		grid-template-columns: repeat(2, 1fr);
 		
 	}
+	
+	article#post-43 {
+		grid-column: span 2;
+		width: 40%
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1092,7 +1097,6 @@ a:active {
 	font-weight: 600;
 	color: #dfdfdf
 }
-
 
 .single-post .posts-navigation .next-post:hover, .prev-post:hover {
 	transform: scale(1.1);
