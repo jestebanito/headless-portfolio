@@ -99,10 +99,16 @@ const Post = ( {restBase, featuredImage} ) => {
                 <h3 data-aos="fade-up" data-aos-duration="1000">More Projects:</h3>
                 <nav className="posts-navigation" data-aos="fade-up" data-aos-duration="1000">
                     {restData.previous_post['id'] &&
-                        <Link to={`/work/${restData.previous_post['slug']}`} onClick={scrollToTop} className="prev-post">{restData.previous_post['title']}</Link>
+                        <Link to={`/work/${restData.previous_post['slug']}`} onClick={scrollToTop} className="prev-post">
+                        <div dangerouslySetInnerHTML={{ __html: restData.previous_post['image'] }}></div>
+                        {restData.previous_post['title']}
+                        </Link>
                     }
                     {restData.next_post['id'] &&
-                        <Link to={`/work/${restData.next_post['slug']}`} onClick={scrollToTop} className="next-post">{restData.next_post['title']}</Link>
+                        <Link to={`/work/${restData.next_post['slug']}`} onClick={scrollToTop} className="next-post">
+                        <div dangerouslySetInnerHTML={{ __html: restData.next_post['image'] }}></div>
+                        {restData.next_post['title']}
+                        </Link>
                     }    
                 </nav>
             </article>
