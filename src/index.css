@@ -1067,7 +1067,7 @@ a:active {
 		
 	}
 	
-	article#post-43 {
+	#work .entry-content article#post-43 {
 		grid-column: span 2;
 		width: 40%
 	}
