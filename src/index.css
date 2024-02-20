@@ -1098,11 +1098,6 @@ a:active {
 	color: #dfdfdf
 }
 
-.single-post .posts-navigation .next-post:hover, .prev-post:hover {
-	transform: scale(1.1);
-	color: #ffffff
-}
-
 .single-post h2 {
 	font-family: 'Albert Sans', sans-serif;
 	font-size: 2.2rem;
@@ -1141,6 +1136,11 @@ a:active {
 	.single-post h2 {
 		font-size: 2.8rem;
 		padding-top: 5.8rem;
+	}
+
+	.single-post .posts-navigation .next-post:hover, .prev-post:hover {
+		transform: scale(1.1);
+		color: #ffffff
 	}
 }
 
