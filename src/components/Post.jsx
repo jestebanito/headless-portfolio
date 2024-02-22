@@ -67,15 +67,15 @@ const Post = ( {restBase, featuredImage} ) => {
         <>
         { isLoaded ? (
             <>
-            <article className="single-post" id={`post-${restData.id}`} data-aos="fade-up" data-aos-duration="1000">
-                <h2>{restData.title.rendered}</h2>
+            <article className="single-post" id={`post-${restData.id}`}>
+                <h2 data-aos="fade-up" data-aos-duration="1000">{restData.title.rendered}</h2>
                 {/* <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(restData._embedded['wp:featuredmedia'][0])}></figure> */}
-                <video className="featured-video" ref={videoRef} autoPlay playsInline muted loop>
+                <video className="featured-video" ref={videoRef} autoPlay playsInline muted loop data-aos="fade-up" data-aos-duration="1000">
                 <source src={restData.acf.project_snippets} type="video/mp4" />
                 Your browser does not support the video tag.
                 </video>
                 <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}} data-aos="fade-up" data-aos-duration="1000"></div>
-                <div className="single-button-container" data-aos="fade-up" data-aos-duration="1000">
+                <div className="single-button-container">
                     <button className="live-site">
                         <a href={restData.acf.live_site_button.url} target="_blank" rel="noopener noreferrer">
                             {restData.acf.live_site_button.title}
@@ -87,8 +87,8 @@ const Post = ( {restBase, featuredImage} ) => {
                         </a>
                     </button>
                 </div>
-                <h2 className="tool-stack-title" data-aos="fade-up" data-aos-duration="1000">Tools Used</h2>
-                    <div className="tool-stack" data-aos="fade-up" data-aos-duration="1000">
+                <h2 className="tool-stack-title">Tools Used</h2>
+                    <div className="tool-stack">
                         {restData.acf.tools.map((tool, index) =>
                         <div key={index}>
                             <img src={tool.tool_icons.url} alt={tool.tool_icons.alt}></img>
@@ -96,8 +96,8 @@ const Post = ( {restBase, featuredImage} ) => {
                         </div>
                         )}
                     </div>
-                <h3 data-aos="fade-up" data-aos-duration="1000">More Projects:</h3>
-                <nav className="posts-navigation" data-aos="fade-up" data-aos-duration="1000">
+                <h3>More Projects:</h3>
+                <nav className="posts-navigation">
                     {restData.previous_post['id'] &&
                         <Link to={`/work/${restData.previous_post['slug']}`} onClick={scrollToTop} className="prev-post">
                         <div dangerouslySetInnerHTML={{ __html: restData.previous_post['image'] }}></div>
@@ -115,8 +115,8 @@ const Post = ( {restBase, featuredImage} ) => {
 
             {connectData && (
                 <section id='connect-post'>
-                    <h2 data-aos="fade-up" data-aos-duration="1000">Like what you see?</h2>
-                    <div className="entry-content" data-aos="fade-up" data-aos-duration="1000">
+                    <h2>Like what you see?</h2>
+                    <div className="entry-content">
                         <article>
                             <p className="short-text">{connectData.acf.connect_short_text}</p>
                             <h3>{connectData.acf.get_in_touch}</h3>
