@@ -3,6 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import { useEffect } from 'react'
 import Home from './Home'
 import Post from './Post'
+import NotFound from './NotFound'
 
 import logo from "../assets/logo.svg";
 import homeIcon from "../assets/navicons/home.svg";
@@ -127,6 +128,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home restBase={restBase} featuredImage={featuredImage} />} />
           <Route path='/work/:slug' element={<Post restBase={restBase} featuredImage={featuredImage} />} />
+          <Route path='*' element={<NotFound />}/>
         </Routes>
       </main>
     </div>
