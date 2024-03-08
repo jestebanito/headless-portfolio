@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Drumkeys from './Drumkeys';
 import tomOneSound from "../assets/sounds/tom-1.wav";
 import tomTwoSound from "../assets/sounds/tom-2.wav";
