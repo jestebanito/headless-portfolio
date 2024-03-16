@@ -196,7 +196,7 @@ const Home = ({ restBase, featuredImage }) => {
                 </section>
                 )}
                 <footer>
-                    <p className="copyright">&copy; 2024 Handcrafted by Josh Esteban</p>
+                    <p className="copyright">&copy; 2024 Hand-crafted by Josh Esteban</p>
                 </footer>
             </div>
         ) : (
