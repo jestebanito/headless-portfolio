@@ -1251,6 +1251,11 @@ article .short-text {
 	fill: transparent !important;
 }
 
+/* If project has no GitHub or Developer doesn't want GitHub to be shown*/
+button.github-repo.no-github {
+	display: none;
+}
+
 @media (min-width: 580px) {
 	#connect article {
 		margin-bottom: 2rem;

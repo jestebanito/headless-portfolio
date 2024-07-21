@@ -81,7 +81,7 @@ const Post = ( {restBase, featuredImage} ) => {
                             {restData.acf.live_site_button.title}
                         </a>
                     </button>
-                    <button className="github-repo">
+                    <button className={`github-repo ${!restData.acf.github_repo_button || !restData.acf.github_repo_button.url || !restData.acf.github_repo_button.title ? 'no-github' : ''}`}>
                         <a href={restData.acf.github_repo_button.url} target="_blank" rel="noopener noreferrer">
                             {restData.acf.github_repo_button.title}
                         </a>
