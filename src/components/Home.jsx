@@ -183,7 +183,11 @@ const Home = ({ restBase, featuredImage }) => {
                             <p className="short-text">{connectData.acf.connect_short_text}</p>
                             <h3>{connectData.acf.get_in_touch}</h3>
                             <div className="email-container">
-                                <p>{connectData.acf.connect_email}</p>
+                            <p>
+                                <a href={`mailto:${connectData.acf.connect_email}`}>
+                                    {connectData.acf.connect_email}
+                                </a>
+                            </p>
                                 <img 
                                     src={copyIcon} 
                                     alt="Copy"

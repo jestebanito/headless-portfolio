@@ -1217,6 +1217,10 @@ article .short-text {
 	font-weight: 600;
 }
 
+.email-container p a {
+	text-decoration: none;
+}
+
 .email-container img {
 	width: 3rem;
 	padding: 0.75rem;
