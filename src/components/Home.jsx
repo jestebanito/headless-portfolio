@@ -14,6 +14,8 @@ const Home = ({ restBase, featuredImage }) => {
     const aboutPath = restBase + 'pages/12?acf_format=standard&_embed';
     const connectPath = restBase + 'pages/15?acf_format=standard&_embed';
 
+    const currentYear = new Date().getFullYear();
+
     const [homeData, setHomeData] = useState([]);
     const [worksData, setWorksData] = useState([]);
     const [postsData, setPostsData] = useState([])
@@ -97,7 +99,7 @@ const Home = ({ restBase, featuredImage }) => {
     
                 {worksData && (
                     <section id='work'>
-                    <h2 data-aos="fade-up" data-aos-duration="1000" className="my-work" id="my-work">My Work</h2>
+                    <h2 data-aos="fade-up" data-aos-duration="1000" className="my-work" id="my-work">Featured Work</h2>
                     <div className="entry-content">
                         {postsData.map(post => 
                         <article key={post.id} id={`post-${post.id}`} data-aos="fade-up" data-aos-duration="1000">
@@ -116,6 +118,8 @@ const Home = ({ restBase, featuredImage }) => {
                             <div  dangerouslySetInnerHTML={{__html:post.acf.movie_database_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.portfolio_overview}}></div>
                             <div  dangerouslySetInnerHTML={{__html:post.acf.zen_wellness_overview}}></div>
+                            <div  dangerouslySetInnerHTML={{__html:post.acf.spa_utopia_overview}}></div>
+                            <div  dangerouslySetInnerHTML={{__html:post.acf.arp_overview}}></div>
                             <Link to={`/work/${post.slug}`}><div dangerouslySetInnerHTML={{__html:post.acf.single_page_button}}></div></Link>
                         </article>
                         )}
@@ -185,7 +189,7 @@ const Home = ({ restBase, featuredImage }) => {
                                     alt="Copy"
                                     onClick={handleCopyClick} 
                                 />
-                                {/* {isCopied && <span>Copied!</span>} */}
+                                {isCopied && <span>Copied!</span>}
                             </div>
                             <div className="social-container">
                                 <div className="linked-in" dangerouslySetInnerHTML={{ __html:connectData.acf.linkedin_icon}}></div>
@@ -196,7 +200,7 @@ const Home = ({ restBase, featuredImage }) => {
                 </section>
                 )}
                 <footer>
-                    <p className="copyright">&copy; 2024 Hand-crafted by Josh Esteban</p>
+                    <p className="copyright">&copy; {currentYear} Hand-crafted by Josh Esteban</p>
                 </footer>
             </div>
         ) : (
