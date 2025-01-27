@@ -189,7 +189,7 @@ const Home = ({ restBase, featuredImage }) => {
                                     alt="Copy"
                                     onClick={handleCopyClick} 
                                 />
-                                {isCopied && <span>Copied!</span>}
+                                {/* {isCopied && <span>Copied!</span>} */}
                             </div>
                             <div className="social-container">
                                 <div className="linked-in" dangerouslySetInnerHTML={{ __html:connectData.acf.linkedin_icon}}></div>
