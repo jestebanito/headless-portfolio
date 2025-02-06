@@ -163,7 +163,7 @@ const Home = ({ restBase, featuredImage }) => {
                             </div>
                             ))}
                         </div>
-                        <h2 className="currently-learning-title" data-aos="fade-up" data-aos-duration="1000">Currently Learning</h2>
+                        {/* <h2 className="currently-learning-title" data-aos="fade-up" data-aos-duration="1000">Currently Learning</h2>
                         <div className="currently-learning" data-aos="fade-up" data-aos-duration="1000">
                             {aboutData.acf.currently_learning.map((learning, index) => (
                             <div key={index}>
@@ -171,7 +171,7 @@ const Home = ({ restBase, featuredImage }) => {
                                 <p>{learning.learning_title}</p>
                             </div>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                 </section>
                 )}
