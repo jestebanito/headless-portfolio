@@ -130,14 +130,15 @@ const Home = ({ restBase, featuredImage }) => {
 
                 {aboutData && (
                 <section id='about'>
-                    <h2 data-aos="fade-up" data-aos-duration="1000">About Me</h2>
+                    <div data-aos="fade-up" data-aos-duration="1000">
+                    <h2>About Me</h2>
                     {aboutData.featured_media !== 0 && aboutData._embedded &&
                         <figure className="featured-image"
                         dangerouslySetInnerHTML={featuredImage
-                        (aboutData._embedded['wp:featuredmedia'][0])}
-                        data-aos="fade-up" data-aos-duration="1000">
+                        (aboutData._embedded['wp:featuredmedia'][0])}>
                         </figure>
                     }
+                    </div>
                     <div className="entry-content">
                         <article className="about-article" data-aos="fade-up" data-aos-duration="1000">
                             <div className='about-intro' dangerouslySetInnerHTML={{ __html:aboutData.acf.about_me_intro}}></div>
@@ -145,23 +146,27 @@ const Home = ({ restBase, featuredImage }) => {
                         <div data-aos="fade-up" data-aos-duration="1000">
                             <Drumkit />
                         </div>
-                        <h2 className="dev-stack-title" data-aos="fade-up" data-aos-duration="1000">Development Stack</h2>
-                        <div className="dev-stack" data-aos="fade-up" data-aos-duration="1000">
-                            {aboutData.acf.development_stack.map((dev, index) => (
-                            <div key={index}>
-                                <img src={dev.dev_icons.url} alt={dev.dev_icons.alt}></img>
-                                <p>{dev.dev_title}</p>
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <h2 className="dev-stack-title">Development Stack</h2>
+                            <div className="dev-stack">
+                                {aboutData.acf.development_stack.map((dev, index) => (
+                                <div key={index}>
+                                    <img src={dev.dev_icons.url} alt={dev.dev_icons.alt}></img>
+                                    <p>{dev.dev_title}</p>
+                                </div>
+                                ))}
                             </div>
-                            ))}
                         </div>
-                        <h2 className="design-stack-title" data-aos="fade-up" data-aos-duration="1000">Design Stack</h2>
-                        <div className="design-stack" data-aos="fade-up" data-aos-duration="1000">
-                            {aboutData.acf.design_stack.map((design, index) => (
-                            <div key={index}>
-                                <img src={design.design_icons.url} alt={design.design_icons.alt}></img>
-                                <p>{design.design_title}</p>
+                        <div data-aos="fade-up" data-aos-duration="1000">
+                            <h2 className="design-stack-title">Design Stack</h2>
+                            <div className="design-stack">
+                                {aboutData.acf.design_stack.map((design, index) => (
+                                <div key={index}>
+                                    <img src={design.design_icons.url} alt={design.design_icons.alt}></img>
+                                    <p>{design.design_title}</p>
+                                </div>
+                                ))}
                             </div>
-                            ))}
                         </div>
                         {/* <h2 className="currently-learning-title" data-aos="fade-up" data-aos-duration="1000">Currently Learning</h2>
                         <div className="currently-learning" data-aos="fade-up" data-aos-duration="1000">
@@ -177,9 +182,9 @@ const Home = ({ restBase, featuredImage }) => {
                 )}
 
                 {connectData && (
-                <section id='connect'>
-                    <h2 data-aos="fade-up" data-aos-duration="1000">Like what you see?</h2>
-                    <div className="entry-content" data-aos="fade-up" data-aos-duration="1000">
+                <section data-aos="fade-up" data-aos-duration="1000" id='connect'>
+                    <h2 className="connect-title">Like what you see?</h2>
+                    <div className="entry-content">
                         <article>
                             <p className="short-text">{connectData.acf.connect_short_text}</p>
                             <h3>{connectData.acf.get_in_touch}</h3>
@@ -205,7 +210,7 @@ const Home = ({ restBase, featuredImage }) => {
                 </section>
                 )}
                 <footer>
-                    <p className="copyright">&copy; {currentYear} Hand-crafted by Josh Esteban</p>
+                    <p className="copyright">&copy; {currentYear} JE Codes Studios | Hand-crafted by Josh Esteban</p>
                 </footer>
             </div>
         ) : (

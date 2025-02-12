@@ -695,7 +695,6 @@ a:active {
 	bottom: 0;
 	width: 100%;
 	padding: 0.4rem 1.25rem 0.2rem;
-	max-width: 75rem;
 	margin: 0 auto;
 	background-color: #202020;
 }
@@ -776,7 +775,7 @@ a:active {
 @media (min-width: 580px) {
 	.site-navigation {
 		position: relative;
-		max-width: 75rem;
+		max-width: 1112px;
 		margin: 0 auto;
 	}
 
@@ -806,7 +805,6 @@ a:active {
 
 	.links-container a:hover {
 		text-shadow: 3px 5px 6px rgba(0,0,0,0.6);
-		transform: scale(1.1);
 	}
  
 	.links-container a:not(first-child):hover::after {
@@ -823,7 +821,7 @@ a:active {
 		justify-content: flex-start;
 		position: absolute;
 		top: -3px;
-		left: 15px;
+		left: 23px;
 		box-shadow: 0px 0px;
 		padding-bottom: 0;
 		margin: 0;
@@ -836,7 +834,6 @@ a:active {
 
 	.logo-container a img:hover {
 		box-shadow: 0px 0px 15px rgba(0,0,0,0.6);
-		transform: scale(1.1);
 	}
 
 	.site-navigation a {
@@ -932,7 +929,7 @@ a:active {
 	white-space: nowrap;
 	margin: 0 auto;
 	animation: 
-	typing 2s steps(40, end),
+	typing 1.5s steps(40, end),
 	blink-caret 1.2s step-end infinite;
 	text-align: left;
 	animation-delay: 1s;
@@ -959,9 +956,9 @@ a:active {
 
 /* Homepage "designer" Intro Animation */
 #home .designer {
-	animation: moving 2s;
+	animation: moving 1s;
 	transform: translateY(0px);
-	animation-delay: 3.4s;
+	animation-delay: 2.6s;
 	opacity: 0;
 	animation-fill-mode: forwards;
 	padding-right: 0.2rem;
@@ -1039,11 +1036,11 @@ a:active {
 }
 
 #work .featured-video {
-	transition: transform 0.3s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 }
 
 #work .featured-video:hover {
-	transform: scale(1.03);
+	transform: translateY(-5px);
 }
 
 #work article h3 {
@@ -1138,8 +1135,12 @@ a:active {
 		padding-top: 5.8rem;
 	}
 
+	.single-post .posts-navigation .next-post, .prev-post {
+		transition: transform 0.2s ease-in-out;
+	}
+
 	.single-post .posts-navigation .next-post:hover, .prev-post:hover {
-		transform: scale(1.1);
+		transform: translateY(-5px);
 		color: #ffffff
 	}
 }
@@ -1187,6 +1188,10 @@ a:active {
 /*--------------------------------------------------------------
 # Connect Section
 --------------------------------------------------------------*/
+.connect-title {
+	padding-top: 9rem !important;
+}
+
 #connect article {
 	margin-bottom: 2rem;
 }
@@ -1333,10 +1338,7 @@ footer {
 	background-color: #303030;
 	outline: 3px solid #eeeeee;
 	padding: 5px;
-}
-
-.speaker-audio img:hover {
-	transform: scale(1.1);
+	cursor: pointer;
 }
 
 @media (min-width: 445px) {
