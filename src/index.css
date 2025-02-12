@@ -1230,6 +1230,7 @@ article .short-text {
 	width: 3rem;
 	padding: 0.75rem;
 	border-radius: 30%;
+	cursor: pointer;
 }
 
 .email-container img:hover {
